@@ -32,7 +32,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xdd84e686d1d4ed6b6d60fc2277f58d5","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xa708c7cef684e978d9ed7405229af8d","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
     <script src="libs/editable/editable.js"></script>
@@ -67,9 +67,9 @@ class: inverse, center, title-slide, middle
 
 # Remotely Sensing Cities and Environments
 
-### Lecture 3: Corrections, Landsat and merging imagery
+### Lecture 4: Policy applications
 
-### 02/02/2022 (updated: 21/03/2022)
+### 02/02/2022 (updated: 31/03/2022)
 
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>[a.maclachlan@ucl.ac.uk](mailto:a.maclachlan@ucl.ac.uk)
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>[andymaclachlan](https://twitter.com/andymaclachlan)
@@ -136,21 +136,11 @@ top:1em;right:1em;
 
 .pull-left[
 
-### Part 1: corrections
+### Part 1: Example applcations
 
-* Geometric
 
-* Atmospheric 
 
-* Orthorectification / Topographic correction
-
-* Radiometric 
-
-### Part 2: data joining and enhancement  
-
-* Feathering 
-
-* Contrast Enhancement 
+### Part 2: Policy challenges
 
 ]
 
@@ -159,611 +149,505 @@ top:1em;right:1em;
 .small[Source:[Original from the British Library. Digitally enhanced by rawpixel.](https://www.rawpixel.com/image/571789/solar-generator-vintage-style)
 ]]
 
-???
-
-Note these down and add explanations 
-
 ---
 class: inverse, center, middle
 
-# Pre-processing requirements
-
-## Occasionally remotely sensed images can contain flaws within them
-
-## These can be from the sensor, the atmopshere, the terrain ...and more!
+# Before we can explore policy we really need to look at what remotely sensed data can provide answers to...
 
 ---
 
-# Scan lines
+class: inverse, center, middle
 
-A rather famous example is when the scan line corrector on Landsat 7 failed... 
+# So...a brief overview...but of course this depends on the data you are using
+
+---
+
+# Data from sensors
+
+Depends on a the combination of spectral bands,  resolutions + cost.
 
 .pull-left[
 
-&lt;img src="img/L7-SLC-off-subset.jpg" width="100%" style="display: block; margin: auto;" /&gt;
-.small[Source:[USGS](https://www.usgs.gov/landsat-missions/landsat-7?qt-science_support_page_related_con=0#qt-science_support_page_related_con)
-]
+* Multi-temporal land cover (or land use) mapping 
+
+* Spectral signatures / libraries* 
+
+* Change detection - e.g. urban or forest 
+
+* Vegetation stress - illegal logging 
+
+* Precipitation 
+
+* Elevation models (or point data) - such as LiDAR
+
+* Temperature 
+
+* Night time lights (urban development)
 ]
 
 .pull-right[
 
-&lt;img src="img/with-without-SLC.jpg" width="80%" style="display: block; margin: auto;" /&gt;
-.small[Source:[USGS](https://www.usgs.gov/landsat-missions/landsat-7?qt-science_support_page_related_con=0#qt-science_support_page_related_con)
-]
+* Forest fire monitoring / predicting / "hot spot" detecting 
+
+* Pollution monitoring 
+
+* Drought indices
+
+* Informal housing detection
+
+* Water level data - monitoring 
+
+* Building or network outline (polygon / line) extraction
+
+* Environmental monitoring (e.g. Aral Sea)
+
+* Estimations of resources - forest, water, snow, ice, green space
 ]
 
 ---
-class: inverse, center, middle
-
-
-# Geometric correction 
-
----
-
-# Geometric correction
-
-We have seen in GIS that a satellite image is given a coordinate reference system.
-
-But when remotely sensed data is collected image distortions can be introduced due to:
-
-* View angle (off-nadir)* - [Nadir means directly down](https://space.stackexchange.com/questions/19727/in-spacecraft-talk-is-nadir-just-a-fancy-word-for-down)
-* Topography (e.g. hills not flat ground)
-* Wind (if from a plane)
-* Rotation of the earth (from satellite) 
+# Different wavelengths show us different things...
 
 .pull-left[
-
-&lt;img src="img/image_acuisition_distortion.jpg" width="80%" style="display: block; margin: auto;" /&gt;
-.small[Geometric distortion from sensor view angles. Source:[Remote Sensing in Schools](https://fis.uni-bonn.de/en/recherchetools/infobox/professionals/preprocessing/geometric-correction)
-]
-]
-
-.pull-right[
-
-&lt;img src="img/earth_rotation.jpg" width="80%" style="display: block; margin: auto;" /&gt;
-.small[Geometric distortion from Earth rotation. Source:[Remote Sensing in Schools](https://fis.uni-bonn.de/en/recherchetools/infobox/professionals/preprocessing/geometric-correction)
-]
-]
-
----
-
-# Geometric correction solution
-
-* We identify Ground Control Points (GPS) to match known points in the image and a reference dataset
-  * local map 
-  * another image
-  * GPS data from handheld device 
-  
-.pull-left[
-
-* We take the coordinates and model them to give geometric transformation coefficients 
-* Think back to GIS - linear regression with our distorted x or y as the dependent
-
-* We then plot these and try to minimise the RMSE - Jensen sets a RMSE value of 0.5
-]
-
-
-.pull-right[
-
-* There are [many transformation algorithms available](https://gis.stackexchange.com/questions/153227/transformation-types-in-geo-referencing-of-qgis) to model the actual coordinates
-
-* This is the same process if you have ever seen an old map sheet overlaid to in a GIS.
-]
----
-
-# Geometric correction solution 2...
-
-RMSE
-  * (observed - predicted (the residual))^2
-  * sum them and divide by number of data points
-  * square root that total
-  
-* [The model with the lowest RMSE will fit best](https://gis.stackexchange.com/questions/8900/generally-accepted-root-mean-square-rms-error-for-rectifying-topographic-maps) ...   
-
-When we do this we also might shift the data slightly ...so we must re-sample the final raster:
-
-.pull-left[
-  * Nearest Neighbor
-  * Linear
-  * Cubic
-  * Cubic spline
-]
-
-.pull-right[
-&lt;img src="img/Resampling.jpg" width="100%" style="display: block; margin: auto;" /&gt;
-.small[Resampling. Source:[Richard Treves](https://www2.geog.soton.ac.uk/users/trevesr/obs/rseo/geometric_correction.html)
-]
-]
----
-
-# Atmospheric correction  
-
-According to Jensen the two most important sources of environmental attenuation are:
-
-* Atmospheric scattering (as we saw in week 1)
-* Topographic attenuation (up next)
-
-Jensen goes on to discuss necessary and unnecessary atmospheric correction:
-
-.pull-left[
-**Unnecessary**
-
-* Classification of a single image 
-* Independent classification of multi date imagery 
-* Composite images (combining images)
-* Single dates or where training data extracted from all data
-]
-
-.pull-right[
-**Necessary**
-* Biophysical parameters needed (e.g. temperature, leaf area index, NDVI)
-* E.g. .. .NDVI is used in the Africa Famine Early Warning System and Livestock Early Warning System
-* Using spectral signatures through time and space
-
-
-]
-
----
-# Atmospheric correction in action
-
-&lt;img src="img/haze_atmospheric_correction.png" width="60%" style="display: block; margin: auto;" /&gt;
-.small[Atmospheric correction examples of three scenes (Bands 1, 2, and 3). Source:[Liang et al. 2001](https://www.researchgate.net/figure/Atmospheric-correction-examples-of-three-scenes-Bands-1-2-and-3-The-first-row-shows_fig6_3202775)
-]
-
-Absorption and scattering create the haze = reduces contrast of image.
-
-Scattering = can create the “adjacency effect”, radiance from pixels nearby mixed into pixel of interest. 
-
-.small[Source:[Newcastle Univesrity](https://www.ncl.ac.uk/tcmweb/bilko/module7/lesson3.pdf)
-]
----
-
-# Atmospheric correction types
-
-### Relative 
-
-
-* Normalize intensities of different bands within a single image
-* Normalise intensities of bands from many dates to one date
-
-.pull-left[ 
-* Dark object subtraction (DOS) or histogram adjustment 
-  * Searches each band for the darkest value then subtracts that from each pixel 
-  * Landsat bands 1-3 (visible) have increased scattering vs longer wavelengths
-]
-
-.pull-right[ 
-
-* Psuedo-invariant Features (PIFs)  
-  * Assume brightness pixels linearly related to a base image...
-  * Regression per band `\(y=1.025x+21.152\)`
-  * Adjust the image based on the regression result. 
-  * Here y is the value of our base. To get y we multiply our new date pixel (x) by the coefficient and add the intercept value.
-  * Apply this to the rest of the pixels..
-  
-]
-
----
-
-# Atmospheric correction types 2
-
-.pull-left[ 
-&lt;img src="img/DOS.png" width="100%" style="display: block; margin: auto;" /&gt;
-.small[Three modalities regarding the atmospheric correction have been retained: (A) none; (B) empirical Dark object Subtraction (DS); and (C) analytical FLAASH correction. Lower plots represent spectral signatures of five features (golden stars over images) against the three modalities. Source:[Collin and Hench, 2012](https://www.mdpi.com/2072-4292/4/5/1425/htm)
-
-]
-]
-
-.pull-right[
-&lt;img src="img/PIFs.png" width="50%" style="display: block; margin: auto;" /&gt;
-.small[PIFs between datasets from different dates - lnland Wetland Change Detection in the Everglades Water Conservation Area 2A Using a Time Series of Normalized Remotely Sensed Data. Source:[Jensen et al. 1995, 2012](https://www.asprs.org/wp-content/uploads/pers/1995journal/feb/1995_feb_199-209.pdf)
-
-]
-]
-
-
----
-# Atmospheric correction types 3
-
-### Absolute 
-
-* Change digital brightness values into scaled surface reflectance. We can **then compare these scaled surface reflectance values across the planet**
-
-* We do this through **atmospheric radiative transfer models** and there are many to select from 
-
-* **However, nearly all assume atmospheric measurements are available** which are used to "invert" the image radiance to scaled surface reflectance
-
-* The scattering and absorption information comes from atmopshierc radiative transfer code such as MODTRAN 4+ and the Second Simulation of the Satellite Signal in the Solar Spectrum (6S), which can now be used through python - [called Py6S](https://py6s.readthedocs.io/en/latest/audience.html)
-
----
-
-# Atmospheric correction types 4
-
-.pull-left[ 
-### Absolute Data requirements
-
-* An atmopsheric model (summer, tropical) - usually you can select from the tool
-* Local atmopsheric visibility - from a weather station, like airports
-* Image altitude 
-]
-
-.pull-right[
-### Absolute Tools $$$
-
-* ACORN - Atmopsehic CORection Now
-* FLAASH - Fast Line of-sight Atmopsheric Analysis 
-* QUAC - Quick Atmopsheric Correction 
-* ATCOR - The ATmospheric CORrection program 
-
-
-Free
-* SMAC - [Simplified Model for Atmospheric Correction (SMAC)](https://github.com/olivierhagolle/SMAC)
-* [Orfeo Toolbox](https://www.orfeo-toolbox.org/CookBook/Applications/app_OpticalCalibration.html)
-]
-
-
----
-# Atmospheric correction types 5
-
-### Empirical Line Correction 
-
-* We can go and take measurements in situ using a field spectrometer 
-
-* This does require measurements at the same time as the satellite overpass....
-
-.pull-left[
-&lt;img src="img/calibration_panel2.jpg" width="95%" style="display: block; margin: auto;" /&gt;
-.small[Source: Andy MacLachlan]
-]
-
-.pull-right[
-&lt;img src="img/calibration_panel.jpg" width="65%" style="display: block; margin: auto;" /&gt;
-.small[Source: Andy MacLachlan]
-]
-
----
-
-# Atmospheric correction types 6
-
-### Empirical Line Correction - CHECKTHIS
-
-Then use these measurements in [linear regression against the satellite data raw digital number](https://www.l3harrisgeospatial.com/docs/atmosphericcorrection.html#empirical_line_calibration)
-
-.center[
-
-`\(BV_k= p_\lambda A_k +B_k\)`
-
-`\(BV_k\)` is the Digital number for band K
-
-`\(p_\lambda\)` is the surface reflenctance from the filed survey
-
-`\(B_k\)` is the additive term...or...
-
-`\(Reflectance (field spectrum) = gain * radiance (input data) + offset\)`]
-
----
-
-class: inverse, center, middle
-
-# Review of atmospheric correction
-
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/qb4yFwzsnU8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-
----
-class: inverse, center, middle
-
-
-# Orthorectification correction / topographic correction
-
----
-
-# Orthorectification correction  
-
-## A subset of georectification 
-
-georectification = giving coordiantes to an image 
-
-orthorectification = removing distortions... making the pixels viewed at nadir
-
-Requires:
-
-* Sensor geometry 
-* An elevation model 
-
-&lt;img src="img/orthorectification.jpg" width="28%" style="display: block; margin: auto;" /&gt;
-.small[A view captured from an oblique angle (for example, 25°, left) must be corrected for relief displacement caused by terrain to generate the orthorectified view (looking straight down, right). Orthoimagery is produced by calculating the nadir view for every pixel. Source:[Esri Insider, 2016](https://www.esri.com/about/newsroom/insider/what-is-orthorectified-imagery/)
-]
-
----
-# Orthorectification correction 2
-
-
-&lt;img src="img/keating_left_and_ortho.jpg" width="80%" style="display: block; margin: auto;" /&gt;
-.small[Orthorectification creates a final product whereby each pixel in the image is depicted as if it were collected from directly overhead or as close to this as possible. In the graphic above, you can see a path through the forest going from the northwest to the southeast. On the left is the original image, and on the right is the orthorectified image. In the orthorectified version, you can see that the path is now nearly straight after the influence of topography has been removed from the image. (Graphic Credit: David DiBiase, Penn State University). Source:[Apollo Mapping, 2016](https://apollomapping.com/blog/g-faq-orthorectification-part)
-]
-
----
-# Orthorectification correction 3
-
-### Software / formulas to do this...
-
-Jensen covers the following formulas:
-
-* Cosine correction
-
-  * `\(L_H= L_T\frac{cos\theta_O}{\cos_i}\)`
-  
-  Where
-  * `\(L_T\)` = radiance from sloped terrain
-  * `\(\theta_O\)` = Sun's zenith angle
-  * `\(i\)` = Sun's incidence angle - cosine of the angle between the solar zenith
-and the normal line of the slope
-  * Latter two found in angle coefficient files (e.g. Landsat data ANG.txt)
-
-* Minnaert correction
-* Statistical Empirical correction 
-* C Correction (advancing the Cosine)
-
----
-# Orthorectification correction 4
-
-### Software / formulas to do this...
-
-&lt;img src="img/vza-sza.png" width="30%" style="display: block; margin: auto;" /&gt;
-.small[Schematic illustration of the Solar Zenith Angle (SZA) and Viewing Zenith Angle (VZA) for observations from satellite-based instrument. [image taken from a NASA page](https://sacs.aeronomie.be/info/sza.php)
-]
-
-To get `\(cos_i\)`
-
-`\(cos_i= cos\theta_p cos\theta_z + sin\theta_p sin\theta_zcos(\phi_a-\phi_o)\)`
-
-Where:
-
-`\(\theta_p\)` = slope angle (from DEM)
-`\(\theta_z\)` = solar zenith
-`\(\phi_a\)` = slope aspect (orientation of the slope from DEM)
-`\(\phi_o\)` = solar azimuth
-
-
----
-# Orthorectification correction 5
-
-solar azimuth and solar zenith express the position of the sun
-
-&lt;img src="img/solarAngles.png" width="75%" style="display: block; margin: auto;" /&gt;
-.small[Solar zenith and solar azimuth Source:[catalyst.earth](https://catalyst.earth/catalyst-system-files/help/concepts/focus_c/atcor_aboutZenithAzimuth.html)
-]
-
----
-# Orthorectification correction 6
-
-### Software: 
-
-* [QGIS](https://docs.qgis.org/2.6/en/docs/user_manual/processing_algs/saga/terrain_analysis_lighting/topographiccorrection.htm)
-
-* [SAGA GIS](https://saga-gis.sourceforge.io/saga_tool_doc/2.2.5/ta_lighting_4.html)
-
-* [R package topocorr](https://rdrr.io/cran/landsat/man/topocorr.html)
-
-**Note:** Atmospheric correction happens before topographic correction.
----
-
-class: inverse, center, middle
-
-# Radiometric Calibration
-
----
-
-# Radiometric Calibration
-
-* Sensors capture image brightness and distributed as a Digital Number (or DN) - allows for efficient storage but **has no units!**
-
-* Spectral radiance is the amount of light within a band from a sensor in the field of view (FOV)
-
-* It is independent of the sensor 
-
-* Measured in Watts (power or light here), per metre squared (surface within FOV) per steradian (angle of the view) per nanometre (wavelength) = `\(W m^2 sr^-1 μm^1\)`
-
-* DN to spectral radiance = radiometric calibration
-
-* Sensor calibration = the relationship between 
-
-.center[ `$$L\lambda = Bias + (Gain * DN)$$`
-`\(Gain\)` and `\(Bias\)` are usually provided but we can calcaulte them. 
-
-]
-
-.small[Source:[Richard Treves](https://www2.geog.soton.ac.uk/users/trevesr/obs/rseo/radiometric_calibration.html) and [University of Newcastle](https://www.ncl.ac.uk/tcmweb/bilko/module7/lesson3.pdf)]
-
----
-
-# Remote sensing jargon 
-
-We saw in CASA0005 and we will see in this module the terms gain and offset...
-
-Before a sensor is launched it is calibrated in a lab - we then use these measurements to adjust the data from the sensor...
-
-
-&lt;img src="img/gain_bias.png" width="65%" style="display: block; margin: auto;" /&gt;
-.small[Calibration of 8-bit satellite data. Gain represents the gradient of the calibration. Bias defines the spectral radiance of the sensor for a DN of zero. Source:[Lesson 3: Radiometric correction of satellite images](https://www.ncl.ac.uk/tcmweb/bilko/module7/lesson3.pdf)
-]
-
----
-# Remote sensing jargon 2
-
-*  radiance refers to any radiation leaving the Earth (i.e. upwelling,
-toward the sensor
-
-* irradiance, is used to describe downwelling radiation reaching the
-Earth from the sun
-
-&lt;img src="img/radiance_irradiance.png" width="50%" style="display: block; margin: auto;" /&gt;
-.small[Source:[Newcastle Univesrity](https://www.ncl.ac.uk/tcmweb/bilko/module7/lesson3.pdf)
-]
-
----
-class: inverse, center, middle
-
-# The good news
-
-# Remote sensing products now come "corrected" - e.g. "Analysis Ready Data" or ARD
-
----
-# Landsat ARD - surface reflectance 
-
-&gt; Landsat data are distributed as a surface reflectance product achieved through the Landsat
-Ecosystem Disturbance Adaptive Processing System (LEDPAS) and the Landsat 8 Surface
-Reflectance algorithm (L8SR) otherwise known as the Landsat 8 Surface Reflectance Code (LaSRC)
-for correction of atmospheric conditions (Hansen and Loveland, 2012; USGS, 2015). The former
-corrects for atmospheric effects using the Second Simulation of a Satellite Signal in the Solar
-Spectrum (6S) radiative transfer model, whilst the latter implements an internally developed
-algorithm (Hansen and Loveland, 2012; USGS, 2015).
-
-* LEDPAS
-* L8SR
-
-Now also
-
-* LaSRC (Landsat 8-9) level 2 product: https://www.usgs.gov/landsat-missions/landsat-collection-2-surface-reflectance
-
----
-
-class: inverse, center, middle
-
-# What is a level 2 product? 
-
-## Means something has changed or advanced ...
-
-## Here it's the data and algorthims used to create the data - see: https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/Landsat-C1vsC2-2021-0430-LMWS.pdf
-
----
-class: inverse, center, middle
-
-# So why did you just make us go through all that?
-
-# In future you might come across data that isn't ARD (e.g. very high resolution, drone)
-
-# Just because someone gives you data doesn't mean you don't need to know how they created it.
-
----
-
-class: inverse, center, middle
-
-# Part 2: Joining data sets 
-
----
-
-# Part 2: Joining data sets 
-
-* This is termed "Mosaicking" in remote sensing - but it's not much different to merging in GIS
-
-* In Remote Sensing we usually **feather** the images together
-
-* This creates a **seamless** mosaic or image(s)
-
-* The dividing line is termed the **seamline**
-
-* We have a base image and "other" or second image
-
----
-
-# Joining data sets 2
-
-&lt;img src="img/EdgeFeatheringDiagram.png" width="35%" style="display: block; margin: auto;" /&gt;
-.small[Source:[Harris Geospatial](https://www.l3harrisgeospatial.com/docs/mosaicseamless.html)
-]
-
----
-
-# Joining data sets 3
-
-The base and second image over lap - 20 to 30%
-
-From this point there are slight variations on how the method actually feathers...
-
-According to Jensen
-
-* Within the overlap area an representative sample is taken 
-* A histogram is extracted from the base image 
-* It is then applied to image to using a **histogram matching algorithm** 
-* This gives similar brightness values of the two images
-* Next feathering is conducted 
-
----
-# Joining data sets 4
-
-.pull-left[
-&lt;img src="img/no_feathering.jpg" width="100%" style="display: block; margin: auto;" /&gt;
-.small[Source:[WhiteboxDev, stackexchange](https://gis.stackexchange.com/questions/127310/how-to-create-a-mosaic-in-qgis-with-cutline-and-feathering-for-landsat-8-imagery)
+&lt;img src="img/spectral_table.PNG" width="100%" /&gt;
+.small[Source:[USGS](https://www.usgs.gov/faqs/what-are-best-landsat-spectral-bands-use-my-research)
 ]]
 
+
 .pull-right[
-&lt;img src="img/feathering.jpg" width="100%" style="display: block; margin: auto;" /&gt;
-.small[Source:[WhiteboxDev, stackexchange](https://gis.stackexchange.com/questions/127310/how-to-create-a-mosaic-in-qgis-with-cutline-and-feathering-for-landsat-8-imagery)
+&lt;img src="img/spectral_viewer.PNG" width="100%" /&gt;
+.small[Source:[USGS](https://landsat.usgs.gov/spectral-characteristics-viewer)
 ]]
 
 ---
+# Urban expansion 
 
-# Image Enhancement
+**Sensor**
 
-### Contrast Enhancement 
+* Landsat
 
-* Do materials reflect different amounts of energy in the same wavelengths? 
-
-* If they did we would have good contrast, usually they don't 
-
-* Sensors are also made to avoid saturation = when the maximum DN value is exceeded, so most images have a low range. 
-
-* E.g., from Jensen...
-
-  * Image band has a range of 4 to 105
-  * 0-3 and 106-255 aren't used
-  * We can expand the range
-
-* Many methods to do this:
-
-  * Minimum - Maximum 
-  * Percentage Linear and Standard Deviation 
-  * Piecewise Linear Contrast Stretch 
+&lt;img src="img/urban_area.png" width="35%" style="display: block; margin: auto;" /&gt;
+.small[Figure 2. Urban expansion within the Perth Metropolitan Region (PMR) between 1990 and 2015. Vast urban growth has been observed in PMR with graduating colours exhibiting outward expansion (a); (b) and (c) exhibit static snapshots of urban extent from 2000 (b) and 2015 (c); whilst (d) depicts percentage of urban change per subnational administrative boundary (Local Government Area; LGA).Source:[MacLachlan et al. 2017](https://www.mdpi.com/2073-445X/6/1/9)
+]
 
 ---
 
-# Image Enhancement 2
+# Air pollution and LULC
 
-Only applied to digital numbers
+**Sensors**
 
-&lt;img src="img/raster-image-stretch-dark.jpg" width="65%" style="display: block; margin: auto;" /&gt;
-.small[Source:[EarthLab](https://www.earthdatascience.org/courses/use-data-open-source-python/multispectral-remote-sensing/intro-naip/)
+* Sentinel-3 Sea and Land Surface Temperature
+* Sentinel-5 Precursor Major Air Pollutants
+
+LULC transformation on air pollution, increase MAP (Major Air Pollutants) and LST 
+
+* Used regression...
+
+* Honeycombing - hex grids for different sensor data
+
+&lt;img src="img/LST_honeycombing.jpg" width="60%" style="display: block; margin: auto;" /&gt;
+.small[Fig. 2. The classified honeycomb dataset for LST, PM₂.₅, SO₂, NO₂, CO, and O₃..Source:[Fuldalu and Alta, 2021](https://www.sciencedirect.com/science/article/pii/S2212095521001887?casa_token=0kyJ1dZmkm0AAAAA:syu0WnpPpsCKiY6PiBfzkf2epGa5uldthCpOt1Hey9_pmOF_uel1WpuYECTvF0jr3uzcRCrbd5k#f0005)
 ]
+
+---
+
+class: inverse, center, middle
+
+# Land Use and (?) Land Cover (LULC) 
+
+---
+
+# Urban green spaces
+
+**Sensors / data**
+.pull-left[
+* Landsat (medium res 17%)
+* Sentinel]
+
+.pull-right[
+* LiDAR $
+* High spatial resolution (38%) $
+* High + medium res = 9%
+]
+
+Studies
+
+  * Accessibility to urban green spaces - usual kind of stuff
+  
+  * Also, now types of vegetation - DEM, elevation models and relationship to well being and health 
+  
+  * Google street view! - sky view factor and iTree
+  
+  * Google Earth Engine - Compare health benefits in relation to green space over 25 cities
+
+* Vegetation health - targeted intervention 
+
+* Landscape indexes - mean patch size, patch density and edge density 
+
+.small[Remote sensing of urban green spaces: A review. Source:[Shahtahmassebi et al. 2021](https://www.sciencedirect.com/science/article/pii/S1618866720307639?casa_token=ZrACATZktIAAAAAA:9bCBg0pBWBsIPmYMufywYK54cyPXoImsgNxQCN_JBR2zUQ50mvnKHcKZ9CnB2ywCNNsOCw-tpBU#!)
+]
+---
+
+# Disaster response / preparedness  
+
+**Sensor**
+
+Sentinel-2 spectral imagery 
+
+  * Image difference (post event - pre-event)
+  * View-shed analysis (building outlines / DEM)
+  
+&lt;img src="img/spectral_sig_diff.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+.small[Building a 3D Model of the Beirut Explosion. Source:[Ollie Ballinger](https://oballinger.github.io/beirut-3D-model/)
+]
+
+---
+
+# Disaster response / preparedness 2
+
+&lt;img src="img/GIF_1.gif" width="50%" style="display: block; margin: auto;" /&gt;
+
+.small[Building a 3D Model of the Beirut Explosion. Source:[Ollie Ballinger](https://oballinger.github.io/beirut-3D-model/)
+]
+---
+
+class: inverse, center, middle
+
+# Synthetic Aperture Radar (SAR)
+
+---
+
+# SAR floods
+
+**Sensor**
+
+* Sentinel-1 SAR 
+
+ENSO phases but this is from Australian La Niña 2022
+  * trade winds from south america intensity
+  * draw up cool deep waters and increase thermocline 
+  * temp difference increases, walker circulation intensifies - feedback loop
+  * more cloud + more rain + cyclones in West Pacific 
+
+&lt;img src="img/SAR1.jpg" width="35%" style="display: block; margin: auto;" /&gt;
+
+.small[Eastern Australia Floods. Source:[brockmann-consult](https://www.brockmann-consult.de/eastern-australia-floods/)
+]
+
+---
+
+# SAR background
+
+Synthetic Aperture Radar:
+  * Active sensors
+  * Have surface texture data
+  * See through weather and clouds 
+  * Different wavelengths - different applications
+  
+&lt;img src="img/SAR_bands.PNG" width="50%" style="display: block; margin: auto;" /&gt;
+
+.small[What is Synthetic Aperture Radar?. Source:[NASA Earth Data](https://earthdata.nasa.gov/learn/backgrounders/what-is-sar)
+]
+  
+---
+
+# SAR background 2
+
+  * Also different ploarizations - orientation of the plane in which EMR waves transmitted..
+  
+  &gt; Polarization refers to the orientation of the plane in which the transmitted electromagnetic wave oscillates. While the orientation can occur at any angle, SAR sensors typically transmit linearly polarized. The horizontal polarization is indicated by the letter H, and the vertical polarization is indicated by V.
+  
+&lt;img src="img/SARPolarization.jpg" width="75%" style="display: block; margin: auto;" /&gt;
+
+.small[What is Synthetic Aperture Radar?. Source:[NASA Earth Data](https://earthdata.nasa.gov/learn/backgrounders/what-is-sar)
+]
+
+---
+
+# SAR image
+
+&lt;img src="img/SAR.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+Paper also goes through some correction methods that should be familiar! 
+
+.small[Urban objects detection from C-band synthetic aperture radar (SAR) satellite images through simulating filter properties. Source:[Deepak Kumar, 2021](https://www.nature.com/articles/s41598-021-85121-9)
+]
+
+---
+# SAR image 2
+
+"multitemporal colour composite SAR image, rice growing areas in the Mekong River delta, Vietnam 1996." 
+
+
+.pull-left[
+"Three SAR images acquired by the ERS satellite during 5 May, 9 June and 14 July in 1996 are assigned to the red, green and blue channels respectively for display. The colourful areas are the rice growing areas, where the landcovers change rapidly during the rice season. The greyish linear features are the more permanent trees lining the canals. The grey patch near the bottom of the image is wetland forest. The two towns appear as bright white spots in this image. An area of depression flooded with water during this season is visible as a dark region."
+
+]
+
+.pull-right[
+
+&lt;img src="img/multitemporal colour composite SAR image.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.small[SAR Images. Source:[CRISP](https://crisp.nus.edu.sg/~research/tutorial/sar_int.htm)
+]
+
+---
+
+# SAR background 3
+
+Scattering can change based on wavelength 
+
+Further penetration then the volume scattering will change
+
+&lt;img src="img/SARtree_figure2.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+.small[What is Synthetic Aperture Radar?. Source:[NASA Earth Data](https://earthdata.nasa.gov/learn/backgrounders/what-is-sar)
+]
+
+
+---
+# SAR background 4
+
+Some terms:   
+
+&gt; Backscatter is the portion of the outgoing radar signal that the target redirects directly back towards the radar antenna
+
+The higher the backscattered intensity = rougher the surface. It is "unitless"
+
+Can be converted to "backscatter coefficient, or sigma nought", measured in decibel (dB) units = normalised measure of the radar return from a distributed target 
+
+If the signal is from backscatter is not desired = "clutter"
+
+* Has been used in urban monitoring BUT...
+
+  * Corner reflections in urban environments 
+  * Shadowing - building behind another not imaged 
+  * Speckle - grainy, from scattering on ground - "salt and pepper"
+  
+.small[Source:[NASA Earth Data](https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-1-sar/definitions#:~:text=Backscatter%20is%20the%20portion%20of,by%20which%20backscatter%20is%20formed.)
+]
+
+.small[Source:[Urban Area Delineation Using InSAR Products](https://webapps.itc.utwente.nl/librarywww/papers/msc_2002/gfm/luhega.pdf)
+]
+
+---
+
+# Me on SAR
+
+&gt; Although SAR images over urban areas provide low quality images due to problems associated with radar imaging in such an environment (i.e. multiple bouncing, layover and shadowing), SAR texture measures can provide valuable information in discerning urban areas (Dell’Acqua et al., 2003; Zhu et al., 2012). Isolated scattering of residential areas and crowded backscatters of inner city high density areas permit classification refinement, thus textural measures such as those descried within the spatial domain can aid identification of alternative urban forms (Zhu et al., 2012). 
+
+&gt;However, the lack of freely available SAR data that temporally coincides with other satellite imagery (e.g. Landsat) frequently precludes extensive use
 
 
 ---
 
 class: inverse, center, middle
 
-
-# Warning 
-
-# Some of these concetps could have a dedicated lecture
+# To use SAR or not to use SAR...that is the question...
 
 ---
 
-# Summary
+# InSAR
 
-### Part 1: corrections
+Interferometry Synthetic Aperture Radar (InSAR)
+ * Take two RADAR observations of the target (e.g. the ground)
+ * The two 
+ * Use the phase difference 
+ * Phase = 
+  &gt; "total number of cycles of the wave at any given distance from the transmitter, including the fractional part"
 
-* Imagery may contain error from a variety of sources
+* Phase difference - SUBTRACT the values (measured phase values) at two different measurement points
 
-* We must correct where appropriate 
+* Differential distance depends on the height of the terrain (topography)
 
-* We must contextualise the use of the imagery 
+* Used for creating DEMs
 
-### Part 2: data joining and enhancement  
+* Monitoring displacement of ground - earthquakes etc
 
-* Mosaicing in with a standard method isn't appropriate for satellite imagery 
+.small[INTERFEROMETRY EXPLAINED - MORE DETAIL. Source:[NASA SRTM](https://www2.jpl.nasa.gov/srtm/instrumentinterfmore.html)
+]
+  
 
-* Imagery can be restricted based on the energy reflected and the contrast between features 
+---
+# InSAR 2
 
+Key terms
+
+* Coherence Map
+
+  &gt;  Coherence is defined as the degree of similarity of backscattering response (or reflection characteristic of as measured by the SAR sensor) between corresponding ground cells in both SAR image of an InSAR pair. 
+
+* Differential Interferometry Synthetic Aperture Radar (DInSAR)
+  
+&gt; "quantification of the ground displacement that occurred between the two acquisitions can be achieved" through a "differential interferogram"
+
+.small[Source:[Michel Gay](http://www.permanet-alpinespace.eu/archive/pdf/WP6_1_dinsar.pdf)
+]
+
+---
+# InSAR 3
+
+
+&lt;img src="img/interf_fig4.gif" width="100%" style="display: block; margin: auto;" /&gt;
+
+.small[INTERFEROMETRY EXPLAINED - MORE DETAIL. Source:[NASA SRTM](https://www2.jpl.nasa.gov/srtm/instrumentinterfmore.html)
+]
+
+---
+# SAR applications
+
+SAR applications, an emerging trend: https://www.mdpi.com/journal/remotesensing/special_issues/Urban_SAR 
+
+* Damage detection: https://www.sciencedirect.com/science/article/pii/S0924271621000010?casa_token=Peuv4YfQjsEAAAAA:wAdc-R2tEjK7L4maY6ZcOio3YyIZPnb7HgqXi5SQZAeIoYq8bApu9iA6H-281attgj1dwQ-IPz8 
+
+* Urban area mapping: https://www.sciencedirect.com/science/article/pii/S0034425721002352?casa_token=6kKdHHJ_GZ4AAAAA:LDl85LIgl6O8G_NNSgxfBgcGw7vpRrS0JAd5STW5obGnGDuO2l0RmkdzzLqLEbqNbO0MSzdhFPU
+
+* Urban flooding (lower backscatter coefficient): https://www.mdpi.com/2071-1050/12/14/5784 
+
+* Landslides
+
+* Earthquakes
+
+* Data fusion* / DEM creation
+
+---
+
+# Monitoring forests + illegal logging 
+
+**Sensor**
+
+* Landsat (2000 to 2012)
+
+Monitoring forest loss and illegal logging 
+
+* Pre-processing
+
+&gt; "Landsat pre-processing steps included: (i) image resampling, (ii) conversion of raw
+digital values (DN) to top of atmosphere (TOA) reflectance, (iii) cloud/shadow/water
+screening and quality assessment (QA), and (iv) image normalization"
+
+&gt; The stack of QA layers was used to create a perpixel set of cloud-free image observations which in turn was employed to calculate timeseries spectral metrics.
+
+---
+
+# Monitoring forests + illegal logging 2
+
+* Creating metrics
+
+&gt; Metrics represent a generic feature space that facilitates regionalscale mapping and have been used extensively with MODIS and AVHRR data
+
+&gt; (i) reflectance values representing maximum, minimum and selected percentile values 
+  (ii) mean reflectance values for observations between selected percentiles
+  (iii) slope of linear regression of band reflectance value versus
+image date.
+
+In support of this reference is given to [Hansen et al. 2010](https://www.pnas.org/doi/epdf/10.1073/pnas.0912668107)...supplementary material...
+
+&gt; The time-sequential MODIS 32-dayinputs were transformed to annual metrics to produce a more generalized feature space
+
+---
+# Monitoring forests + illegal logging 3
+
+&gt; "a more generalized feature space"
+
+* Feature space = scattergram of two bands (or things that have been made into bands)
+
+* Can be used for very basic classification - selecting the values that represent land cover
+
+.pull-left[
+&lt;img src="img/Multi_Hyper-spectral_Image_feature_space.svg" width="100%" style="display: block; margin: auto;" /&gt;
+.small[Feature space. Source:[Wikimedia commons 2022](https://commons.wikimedia.org/wiki/File:Multi_Hyper-spectral_Image_feature_space.svg)
+]
+]
+
+.pull-right[
+&lt;img src="img/Spectral-curves-scatter-plot.png" width="80%" style="display: block; margin: auto;" /&gt;
+.small[Spectral curves on the scatter plot. Source:[50northspatial](http://www.50northspatial.org/n-dimensional-spectral-feature-space-envi/)
+]
+]
+---
+# Monitoring forests + illegal logging 4
+
+* Training data (in supervised machine learning)
+
+&gt; Training data to relate to the Landsat metrics were derived from image interpretation methods, including mapping of crown/no crown categories using very high spatial resolution data such as Quickbird imagery, existing percent tree cover layers derived from Landsat data (29), and global MODIS percent tree cover (30), rescaled using the higher spatial resolution percent tree cover data sets
+
+&lt;img src="img/training_data.png" width="80%" style="display: block; margin: auto;" /&gt;
+.small[REMAP method. Source:[UN-SPIDER](https://www.un-spider.org/news-and-events/news/new-online-remote-sensing-application-land-cover-classification-and-monitoring)
+]
+
+---
+
+# Monitoring forests + illegal logging 5
+
+* Classification (supervised or unsupervised)
+
+&gt; Decision trees are hierarchical classifiers that predict class membership by recursively partitioning a data set into more homogeneous or less varying subsets, referred to as nodes
+
+&lt;img src="img/Hansen_forest_change.jpeg" width="50%" style="display: block; margin: auto;" /&gt;
+
+.small[FIG. 2 Regional subsets of 2000 tree cover and 2000 to 2012 forest loss and gain.(A) Paraguay, centered at 21.9°S, 59.8°W; (B) Indonesia, centered at 0.4°S, 101.5°E; (C) the United States, centered at 33.8°N, 93.3°W; and (D) Russia, centered at 62.1°N, 123.4°E. Source:[Hansen et al. 2013](https://www.science.org/doi/10.1126/science.1244693)
+]
+
+Used in Brazil to [target illegal logging]( https://news.mongabay.com/2019/04/how-a-sheriff-in-brazil-is-using-satellites-to-stop-deforestation/) 
+
+---
+# Monitoring forests + illegal logging 6
+
+&gt; Decision trees are hierarchical classifiers that predict class membership by recursively partitioning a data set into more homogeneous or less varying subsets, referred to as nodes
+
+* Decision trees are part of a random forest classier
+
+* Take something complex and force into many decisions = if-else conditions or also called divide and conquer.
+
+* Often requires hyperparameters to train the model (or  control the learning process) - e.g. the choices we've made in the past...sort of...
+  * DBSCAN (radius of points, Epsilon or MinPts - to make a cluster)
+  * Spatial weight matrix (type and then weight)
+
+* Split the data into more and more homogeneous subsets (filtering!) this can be limited through
+  * pre-pruning - set a number of iterations before
+  * post-pruning - reduce groups afterwards based on accuracy.
+
+https://www.sciencedirect.com/science/article/abs/pii/S0924271616000265 
+
+https://lgatto.github.io/IntroMachineLearningWithR/unsupervised-learning.html#k-means-clustering 
+
+---
+# Example 7 
+
+Forest fires 
+
+Water scarcity 
+
+---
+
+class: inverse, center, middle
+
+# The key is usually **combining the remote sensing data** with GIS or other datasets to answer questions
+
+--
+
+# The data is consistent over days, months and years
+
+---
+
+class: inverse, center, middle
+
+# We will look at applicaitons in the next few weeks, but first we will explore policy to understand where remote sensing data can be applied.
+
+---
+
+class: center, middle
+
+# We will look at applicaitons in the next few weeks, but first we will explore policy to understand where remote sensing data can **possibly** be applied.
+
+
+---
+
+https://link.springer.com/article/10.1007/s41207-016-0007-4
+
+https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/vol/108/suppl/C 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
