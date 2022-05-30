@@ -76,7 +76,13 @@ library(fontawesome)
 
 ---
 
+```{r, echo=FALSE}
+xaringanExtra::use_progress_bar(color = "#0051BA", location = "bottom")
+```
+
 # How to use the lectures
+
+
 
 - Slides are made with [xaringan](https://slides.yihui.org/xaringan/#1)
 
@@ -618,36 +624,328 @@ https://www.sciencedirect.com/science/article/abs/pii/S0924271616000265
 https://lgatto.github.io/IntroMachineLearningWithR/unsupervised-learning.html#k-means-clustering 
 
 ---
-# Example 7 
+# Forest fires
 
-Forest fires 
+* Dates back to the most cited paper on the topic 
+    - "Application of remote sensing and geographic information systems to forest fire hazard mapping", Chuvieco and Congalton 1989. 
 
-Water scarcity 
+.pull-left[  
+  Used:
+  * **Sensor** Landsat TM 1984
+  * vegetation, elevation, slope, aspect and road/ house proxmity = fire hazard map compared to burned map from Landsat
+  * Did a weighted overlay of the layers - giving hazard value of 0 to 255, some layers had assigned values (e.g. aspect of 90-180 a value of 0)
+  * Vegetation was from a classified Landsat TM image - classified 16 categories 
+  * No accuracy assessment
+  * I assume the manually delineated the burned area pixels 
+]
+.pull-right[
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('img/hazard.png')
+```
+.small[Source:[Chuvieco and Congalton 1989](https://reader.elsevier.com/reader/sd/pii/0034425789900230?token=3F5F9030CFCBBA7544083535303388C8CC1F2D5496F0FFBC273C3673EBFED7B66B2FCAD3EE3B7A6441301FDDAAC7E659&originRegion=eu-west-1&originCreation=20220527153008)
+]]
 
 ---
 
+# Forest fires 2
+
+Whilst somewhat more complex with additional variables and analysis this approach is still being used...e.g. 
+
+.pull-left[
+
+9 parameters in creating a fire action plan for Ecuador...
+
+Fire severity - **Landsat-8 OLI** 2014 and 2020
+
+$dNDVI = pre NDVI − post NDVI$ 
+
+$dNBR = NBRpre − NBRpost$ (similar to NDVI)
+
+Verified from field visits 
+
+Call this a severity model? but kept the indices separate
+
+Used this to designate safe escape routes..
+]
+
+.pull-right[
+```{r echo=FALSE, out.width='80%'}
+knitr::include_graphics('img/action_plan.png')
+```
+.small[Source:[Morante-Carballo et al. 2022](https://www.mdpi.com/2072-4292/14/8/1783)
+]]
+
+---
 class: inverse, center, middle
 
-# The key is usually **combining the remote sensing data** with GIS or other datasets to answer questions
+# Which variables used remote sensing?
 
 --
 
-# The data is consistent over days, months and years
+## Only the severity which wasn't even overlaid directly
+
+--
+
+## The study was somewhat confusing with a focus on severity (the aim) which then changed to a fire action plan that didn't show severity as a factor
+
+--
+
+## No method was given for the action plan development
 
 ---
 
 class: inverse, center, middle
 
-# We will look at applicaitons in the next few weeks, but first we will explore policy to understand where remote sensing data can be applied.
+# The key is *usually* **combining the remote sensing data** with GIS or other datasets to answer questions
+
+--
+
+# The remotely sensed data is consistent over days, months and years
+
+---
+class: inverse, center, middle
+
+
+# Often these papers don't: 
+## demonstrate the link to population / people
+## show how policy can be informed by the outcomes
 
 ---
 
-class: center, middle
+class: inverse, center, middle
 
-# We will look at applicaitons in the next few weeks, but first we will explore policy to understand where remote sensing data can **possibly** be applied.
+# For example:
+## Where should iniatives be targetd for reducing air pollution
+## What areas / population are most at risk from forest fires or where should remeidation be targeted 
+## How can illegal monitoring be most effectively stopped
+---
+class: inverse, center, middle
+
+# We will explore methods in the next few weeks
+
+# But first we will explore policy to understand where remote sensing data can be applied.
+
+---
+# Global policy documents
+
+* New Urban Agenda = standards and principles for planning, construction, development, management and urban improvement
+
+An example of commitments... Environmentally sustainable and resilient urban development subsection
+
+
+.panelset[
+
+.panel[.panel-name[point 64]
+
+> We also recognize that urban centres worldwide, especially in developing countries, often have characteristics that make them and their inhabitants especially vulnerable to the adverse impacts of climate change and other natural and human-made hazards, 
+
+> **including earthquakes, extreme weather events, flooding, subsidence, storms, including dust and sand storms, heatwaves, water scarcity, droughts, water and air pollution, vector-borne diseases and sea level rise,**
+
+> which particularly affect coastal areas, delta regions and small island developing States, among others.
+]
+
+.panel[.panel-name[point 65]
+
+> We commit ourselves to facilitating the 
+
+> **sustainable management of natural resources in cities and human settlements in a manner that protects and improves the urban ecosystem and environmental services, reduces greenhouse gas emissions and air pollution and promotes disaster risk reduction and management**, 
+
+>by supporting the development of disaster risk reduction strategies and periodical assessments of disaster risk caused by natural and human-made hazards, including standards for risk levels..
+]
+
+.panel[.panel-name[point 67]
+
+  >We commit ourselves to promoting the creation and maintenance of well-connected and well distributed networks of 
+  
+  > **open, multipurpose, safe, inclusive, accessible, green and quality public spaces, to improving the resilience of cities to disasters and climate change, including floods, drought risks and heat waves**
+  
+  >  to improving food security and nutrition, physical and mental health, and household and ambient air quality, to reducing noise and promoting attractive and liveable cities, human settlements and urban landscapes and to prioritizing the conservation of endemic
+species. 
+
+]
+]
+
+  
+---
+# Global policy documents
+
+* Sustainable Development Goals (SDG) = targets with measurable indicators for monitoring 
+
+* Full indicators and notes on [SDG indicators](https://unstats.un.org/sdgs/metadata/?Text=&Goal=11&Target=)
+
+.panelset[
+.panel[.panel-name[Goal 11]
+
+  * Goal 11: Make cities and human settlements inclusive, safe, resilient and sustainable 
+]
+
+.panel[.panel-name[Target 11.5]
+
+* Target 11.5: By 2030, significantly reduce the number of deaths and the number of people affected and substantially decrease the direct economic losses relative to global gross domestic product caused by disasters, including water-related disasters, with a focus on protecting the poor and people in vulnerable situations
+
+]
+
+.panel[.panel-name[Monitoring 11.5]
+* 11.5.1 Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population
+
+*  11.5.2 Direct economic loss attributed to disasters in relation to global gross domestic product (GDP)
+
+* 11.5.3 (a) Damage to critical infrastructure and (b) number of disruptions to basic services, attributed to disasters
+]
+
+.panel[.panel-name[Data 11.5]
+* 11.5.1 (and .2) Data provider at national level is appointed Sendai Framework Focal Points. In most countries disaster **data are collected by line ministries and national disaster loss databases are established and managed by special purpose agencies including national disaster management agencies, civil protection agencies, and meteorological agencies**. The Sendai Framework Focal Points in each country are responsible of data reporting through the Sendai Framework Monitoring System.
+
+* 11.5.3 National disaster loss database, reported to UNISDR...**Not every country has a comparable national disaster loss database that is consistent with these guidelines** (although current coverage exceeds 89 countries). Therefore, by 2020, it is expected that all countries will build/adjust national disaster loss databases according to the recommendations and guidelines by the OEIWG.
+]
+]
+
+---
+class: inverse, center, middle
+
+# Positives and negatives with this guidance? 
+
+???
+
+All about monitoring, doesn't say how to do it...but this is changing
+
+---
+# Global policy documents
+
+Some new additions that have included spatial data...e.g...
+
+
+
 
 
 ---
+# Metropolitan policy documents
+
+Under the theme of disaster (flooding, landslides, drought, heatwaves etc)
+
+.panelset[
+.panel[.panel-name[London]
+
+**Increasing efficiency and resilience**
+
+* These environmental threats are real and present, and London must be prepared for them. London’s homes and infrastructure must be protected against the increasing likelihood of heatwaves, and developments must plan for a more integrated approach to water management, while minimising flood risk.
+
+
+**Policy SI 12 Flood risk management **
+
+* Development Plans should use the Mayor’s Regional Flood Risk Appraisal and their Strategic Flood Risk Assessment as well as Local Flood Risk Management Strategies, where necessary, to identify areas where particular and cumulative flood risk issues exist and develop actions and policy
+approaches aimed at reducing these risks.
+
+
+.panel[.panel-name[OneNYC 2050]
+
+* References the sustainable development goals
+* Has a hazards matrix
+
+```{r echo=FALSE, out.width='40%', fig.align='center'}
+knitr::include_graphics('img/NYC.png')
+```
+.small[Source:[oneNYC](https://1w3f31pzvdm485dou3dppkcq-wpengine.netdna-ssl.com/wp-content/uploads/2019/11/OneNYC-2050-A-Livable-Climate-11.7.pdf)
+]]
+]
+.panel[.panel-name[OneNYC 2050 2]
+
+
+* Discusses coastal resiliency as an example of rising sea levels and flooding...BUT?
+
+.pull-left[
+```{r echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics('img/floods1.png')
+```
+]
+
+.pull-right[
+```{r echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics('img/floods2.png')
+```
+]
+.small[Source:[oneNYC](https://1w3f31pzvdm485dou3dppkcq-wpengine.netdna-ssl.com/wp-content/uploads/2019/11/OneNYC-2050-A-Livable-Climate-11.7.pdf)
+]]
+
+.panel[.panel-name[Cape Town]
+
+[Cape Town Municipal Spatial Development Framework](https://www.capetown.gov.za/work%20and%20business/planning-portal/regulations-and-legislations/cape-town-spatial-development-framework#section-docs)
+
+* "worst recorded drought in the city’s history, is a stark reminder that all cities will need to become more robust, resilient and efficient"
+
+* "The Cape Town Spatial Development Framework (CTSDF) was approved in May 2012 and established a long-term spatial vision and policy framework for the City after extensive technical drafting and public participation."
+
+* "Careful management of development to avoid developing in high flood risk areas"
+
+States policies and their requirements ...BUT...
+
+
+]
+
+.panel[.panel-name[Ahmedabad]
+
+* 2010 severe heatwave leading to 1,344 additional deaths
+
+* [2016 Heat Action Plan](https://www.nrdc.org/sites/default/files/ahmedabad-heat-action-plan-2016.pdf):
+  * Awareness and outreach
+  * Early warning system
+  * Capacity of health care professionals
+  * Reduce heat exposure and promote adaptive mesaures ...and mapping high risk areas, although mapping was removed later in the document (page 11)
+
+* Doesn't seem to appear in the publications, although spatial analysis is listed as a long term opportunity in the second paper: 
+
+  - [Development and Implementation of South Asia’s First Heat-Health Action Plan in Ahmedabad (Gujarat, India)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4024996/)
+  - [Rising Temperatures, Deadly Threat:
+Recommendations for Ahmedabad’s Government Officials](https://www.nrdc.org/sites/default/files/india-heat-government-officials-IB.pdf)
+
+]
+]
+
+
+---
+
+# Local policy documents
+
+In most of the previous examples the documents were created by the metropolitan government:
+  * Greater London Authority 
+  * Amdavad Municipal Corporation
+  * City of New York
+
+Usually these are considered an upper tier
+
+They set the strategic plan for the city and may have other responsibilities such as fire, policing, transport and development guidelines.
+
+Lower tier government then carries out or adheres to these goals, for example....
+
+* The Western Australian Planning Commission sets the statutory planning guidance that is carried out by local cities, such as the City of Perth and City of Fremantle.
+
+* The Greater London Authority set the strategic goals for London with London Boroughs providing local services. 
+
+---
+
+# Local policy documents 2
+
+**BUT** there are variations to this rule..
+
+**City of Cape Town**
+
+* The City of Cape Town is a metropolitan municipality or Category A municipality, there is no local municipality below it.
+
+* However, **above** the City of Cape Town is the Provincial government that is responsible for topics such as: agriculture, education, health and public housing. As such the City sets it's own development plan and then implements it (whilst adhering to relevant Provincial topics).
+
+**New York**
+
+* City of New York is responsible for public education, correctional institutions, public safety, recreational facilities, sanitation, water supply, and welfare services
+
+* 5 Boroughs under it act as spokespeople
+
+* City Council has 51 members from districts of about 157,000 
+* New York City is responsible for setting and enacting the policy. State government is above it.
+---
+
+# Task
+
+
 
 https://link.springer.com/article/10.1007/s41207-016-0007-4
 
