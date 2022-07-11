@@ -19,11 +19,7 @@
     <script src="libs/fabric/fabric.min.js"></script>
     <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-scribble/scribble.js"></script>
-<<<<<<< HEAD
-    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
-=======
     <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
     <script src="libs/mark.js/mark.min.js"></script>
     <link href="libs/xaringanExtra-search/search.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-search/search.js"></script>
@@ -36,20 +32,13 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-<<<<<<< HEAD
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x6b94a063c334aeab45f05cec242b19f","expires":1}</script>
-=======
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"af1a2e2770f9412aa6c693f4d87cb9d5","expires":1}</script>
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x23b7b10f3db4405b663ae4772e626a1","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
     <script src="libs/editable/editable.js"></script>
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
-<<<<<<< HEAD
-=======
     <script src="libs/xaringanExtra-progressBar/progress-bar.js"></script>
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
     <head>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -81,33 +70,17 @@ class: inverse, center, title-slide, middle
 
 ### Lecture 4: Policy applications
 
-<<<<<<< HEAD
-### 02/02/2022 (updated: 31/03/2022)
-
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>[a.maclachlan@ucl.ac.uk](mailto:a.maclachlan@ucl.ac.uk)
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>[andymaclachlan](https://twitter.com/andymaclachlan)
-<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>[andrewmaclachlan](https://github.com/andrewmaclachlan)
-<svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0z"/></svg>[Centre for Advanced Spatial Analysis, UCL](https://www.ucl.ac.uk/bartlett/casa/)
-=======
-### 02/02/2022 (updated: 08/06/2022)
+### 02/02/2022 (updated: 11/07/2022)
 
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>[a.maclachlan@ucl.ac.uk](mailto:a.maclachlan@ucl.ac.uk)
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>[andymaclachlan](https://twitter.com/andymaclachlan)
 <svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>[andrewmaclachlan](https://github.com/andrewmaclachlan)
 <svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0z"/></svg>[Centre for Advanced Spatial Analysis, UCL](https://www.ucl.ac.uk/bartlett/casa/)
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
 
 &lt;a href="https://github.com/andrewmaclachlan" class="github-corner" aria-label="View source on GitHub"&gt;&lt;svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"&gt;&lt;path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"&gt;&lt;/path&gt;&lt;path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"&gt;&lt;/path&gt;&lt;path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;style&gt;.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}&lt;/style&gt;
 
 ---
 
-<<<<<<< HEAD
-# How to use the lectures
-
-- Slides are made with [xaringan](https://slides.yihui.org/xaringan/#1)
-
-- <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg> In the bottom left there is a search tool which will search all content of presentation
-=======
 <style>.xe__progress-bar__container {
   bottom:0;
   opacity: 1;
@@ -136,17 +109,12 @@ class: inverse, center, title-slide, middle
 - Slides are made with [xaringan](https://slides.yihui.org/xaringan/#1)
 
 - <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg> In the bottom left there is a search tool which will search all content of presentation
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
 
 - Control + F will also search 
 
 - Press enter to move to the next result 
 
-<<<<<<< HEAD
-- <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg> In the top right let's you draw on the slides, although these aren't saved.
-=======
 - <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg> In the top right let's you draw on the slides, although these aren't saved.
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
 
 - Pressing the letter `o` (for overview) will allow you to see an overview of the whole presentation and go to a slide
 
@@ -264,17 +232,18 @@ Depends on a the combination of spectral bands,  resolutions + cost.
 # Different wavelengths show us different things...
 
 .pull-left[
-&lt;img src="img/spectral_table.PNG" width="100%" /&gt;
+&lt;img src="img/spectral_table.png" width="100%" /&gt;
 .small[Source:[USGS](https://www.usgs.gov/faqs/what-are-best-landsat-spectral-bands-use-my-research)
 ]]
 
 
 .pull-right[
-&lt;img src="img/spectral_viewer.PNG" width="100%" /&gt;
+&lt;img src="img/spectral_viewer.png" width="100%" /&gt;
 .small[Source:[USGS](https://landsat.usgs.gov/spectral-characteristics-viewer)
 ]]
 
 ---
+
 # Urban expansion 
 
 **Sensor**
@@ -400,7 +369,7 @@ Synthetic Aperture Radar:
   * See through weather and clouds 
   * Different wavelengths - different applications
   
-&lt;img src="img/SAR_bands.PNG" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/SAR_bands.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 .small[What is Synthetic Aperture Radar?. Source:[NASA Earth Data](https://earthdata.nasa.gov/learn/backgrounders/what-is-sar)
 ]
@@ -625,11 +594,7 @@ In support of this reference is given to [Hansen et al. 2010](https://www.pnas.o
 ---
 # Monitoring forests + illegal logging 4
 
-<<<<<<< HEAD
-* Training data
-=======
 * Training data (in supervised machine learning)
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
 
 &gt; Training data to relate to the Landsat metrics were derived from image interpretation methods, including mapping of crown/no crown categories using very high spatial resolution data such as Quickbird imagery, existing percent tree cover layers derived from Landsat data (29), and global MODIS percent tree cover (30), rescaled using the higher spatial resolution percent tree cover data sets
 
@@ -653,24 +618,6 @@ In support of this reference is given to [Hansen et al. 2010](https://www.pnas.o
 Used in Brazil to [target illegal logging]( https://news.mongabay.com/2019/04/how-a-sheriff-in-brazil-is-using-satellites-to-stop-deforestation/) 
 
 ---
-<<<<<<< HEAD
-
-# Example 7 
-
-Forest fires 
-
-Water scarcity 
-
----
-
-class: inverse, center, middle
-
-# The key is usually **combining the remote sensing data** with GIS or other datasets to answer questions
-
---
-
-# The data is consistent over days, months and years
-=======
 # Monitoring forests + illegal logging 6
 
 &gt; Decision trees are hierarchical classifiers that predict class membership by recursively partitioning a data set into more homogeneous or less varying subsets, referred to as nodes
@@ -692,6 +639,37 @@ https://www.sciencedirect.com/science/article/abs/pii/S0924271616000265
 https://lgatto.github.io/IntroMachineLearningWithR/unsupervised-learning.html#k-means-clustering 
 
 ---
+
+# Droughts
+
+### Who is still watering their garden in a drought?
+
+.pull-left[
+* Southern California 2022 drought and water shortage - [cities of Conejo Valley](https://www.conejochamber.org/news/details/state-reduces-water-allocation-to-5-due-to-historically-dry-winter-and-low-reservoir-levels-03-21-2022) and Thousand Oaks
+
+* Various [rules about watering for residential properties](https://www.conejovalleyguide.com/welcome/emergency-water-conservation-measures-go-into-effect-on-june-1-2022-conejo-valley-water-providers)
+
+* Sentinel moisture index to spot who is watering too much?
+
+This is...
+
+.center[
+`\(NDMI = \frac{(B08 - B11)}{(B08 + B11)}\)`
+]
+
+* How can the cities prevent this...
+
+]
+
+.pull-right[
+
+&lt;img src="img/drought_index.jfif" width="100%" style="display: block; margin: auto;" /&gt;
+
+.small[See the Twitter thread for other examples. Source:[@ai6yrham](https://twitter.com/ai6yrham/status/1537146383475437568/photo/1)
+]
+]
+---
+
 # Forest fires
 
 * Dates back to the most cited paper on the topic 
@@ -755,22 +733,11 @@ class: inverse, center, middle
 --
 
 ## No method was given for the action plan development
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
 
 ---
 
 class: inverse, center, middle
 
-<<<<<<< HEAD
-# We will look at applicaitons in the next few weeks, but first we will explore policy to understand where remote sensing data can be applied.
-
----
-
-class: center, middle
-
-# We will look at applicaitons in the next few weeks, but first we will explore policy to understand where remote sensing data can **possibly** be applied.
-
-=======
 # The key is *usually* **combining the remote sensing data** with GIS or other datasets to answer questions
 
 --
@@ -1079,18 +1046,14 @@ Following the practical and subsequent discussion write up your case study city 
 * Cite the relevant policy and where appropriate literature.
 
 Should you struggle to find current approaches within your city explore other cities discussed within the practical. 
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
 
 ---
 
 https://link.springer.com/article/10.1007/s41207-016-0007-4
 
 https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/vol/108/suppl/C 
-<<<<<<< HEAD
-=======
 
 ---
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -1138,8 +1101,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
-<<<<<<< HEAD
-=======
 // add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
 // screen reader (see PR #262)
 (function(d) {
@@ -1153,7 +1114,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   });
   d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
 })(document);
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

@@ -76,10 +76,6 @@ library(fontawesome)
 
 ---
 
-<<<<<<< HEAD
-# How to use the lectures
-
-=======
 ```{r, echo=FALSE}
 xaringanExtra::use_progress_bar(color = "#0051BA", location = "bottom")
 ```
@@ -88,7 +84,6 @@ xaringanExtra::use_progress_bar(color = "#0051BA", location = "bottom")
 
 
 
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
 - Slides are made with [xaringan](https://slides.yihui.org/xaringan/#1)
 
 - `r fa("search")` In the bottom left there is a search tool which will search all content of presentation
@@ -190,7 +185,7 @@ Depends on a the combination of spectral bands,  resolutions + cost.
 
 .pull-left[
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('img/spectral_table.PNG')
+knitr::include_graphics('img/spectral_table.png')
 ```
 .small[Source:[USGS](https://www.usgs.gov/faqs/what-are-best-landsat-spectral-bands-use-my-research)
 ]]
@@ -198,12 +193,13 @@ knitr::include_graphics('img/spectral_table.PNG')
 
 .pull-right[
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('img/spectral_viewer.PNG')
+knitr::include_graphics('img/spectral_viewer.png')
 ```
 .small[Source:[USGS](https://landsat.usgs.gov/spectral-characteristics-viewer)
 ]]
 
 ---
+
 # Urban expansion 
 
 **Sensor**
@@ -340,7 +336,7 @@ Synthetic Aperture Radar:
   * Different wavelengths - different applications
   
 ```{r echo=FALSE, out.width='50%', fig.align='center'}
-knitr::include_graphics('img/SAR_bands.PNG')
+knitr::include_graphics('img/SAR_bands.png')
 ```
 
 .small[What is Synthetic Aperture Radar?. Source:[NASA Earth Data](https://earthdata.nasa.gov/learn/backgrounders/what-is-sar)
@@ -580,11 +576,7 @@ knitr::include_graphics('img/Spectral-curves-scatter-plot.png')
 ---
 # Monitoring forests + illegal logging 4
 
-<<<<<<< HEAD
-* Training data
-=======
 * Training data (in supervised machine learning)
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
 
 > Training data to relate to the Landsat metrics were derived from image interpretation methods, including mapping of crown/no crown categories using very high spatial resolution data such as Quickbird imagery, existing percent tree cover layers derived from Landsat data (29), and global MODIS percent tree cover (30), rescaled using the higher spatial resolution percent tree cover data sets
 
@@ -612,24 +604,6 @@ knitr::include_graphics('img/Hansen_forest_change.jpeg')
 Used in Brazil to [target illegal logging]( https://news.mongabay.com/2019/04/how-a-sheriff-in-brazil-is-using-satellites-to-stop-deforestation/) 
 
 ---
-<<<<<<< HEAD
-
-# Example 7 
-
-Forest fires 
-
-Water scarcity 
-
----
-
-class: inverse, center, middle
-
-# The key is usually **combining the remote sensing data** with GIS or other datasets to answer questions
-
---
-
-# The data is consistent over days, months and years
-=======
 # Monitoring forests + illegal logging 6
 
 > Decision trees are hierarchical classifiers that predict class membership by recursively partitioning a data set into more homogeneous or less varying subsets, referred to as nodes
@@ -651,6 +625,39 @@ https://www.sciencedirect.com/science/article/abs/pii/S0924271616000265
 https://lgatto.github.io/IntroMachineLearningWithR/unsupervised-learning.html#k-means-clustering 
 
 ---
+
+# Droughts
+
+### Who is still watering their garden in a drought?
+
+.pull-left[
+* Southern California 2022 drought and water shortage - [cities of Conejo Valley](https://www.conejochamber.org/news/details/state-reduces-water-allocation-to-5-due-to-historically-dry-winter-and-low-reservoir-levels-03-21-2022) and Thousand Oaks
+
+* Various [rules about watering for residential properties](https://www.conejovalleyguide.com/welcome/emergency-water-conservation-measures-go-into-effect-on-june-1-2022-conejo-valley-water-providers)
+
+* Sentinel moisture index to spot who is watering too much?
+
+This is...
+
+.center[
+$NDMI = \frac{(B08 - B11)}{(B08 + B11)}$
+]
+
+* How can the cities prevent this...
+
+]
+
+.pull-right[
+
+```{r echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics('img/drought_index.jfif')
+```
+
+.small[See the Twitter thread for other examples. Source:[@ai6yrham](https://twitter.com/ai6yrham/status/1537146383475437568/photo/1)
+]
+]
+---
+
 # Forest fires
 
 * Dates back to the most cited paper on the topic 
@@ -718,22 +725,11 @@ class: inverse, center, middle
 --
 
 ## No method was given for the action plan development
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
 
 ---
 
 class: inverse, center, middle
 
-<<<<<<< HEAD
-# We will look at applicaitons in the next few weeks, but first we will explore policy to understand where remote sensing data can be applied.
-
----
-
-class: center, middle
-
-# We will look at applicaitons in the next few weeks, but first we will explore policy to understand where remote sensing data can **possibly** be applied.
-
-=======
 # The key is *usually* **combining the remote sensing data** with GIS or other datasets to answer questions
 
 --
@@ -1048,15 +1044,11 @@ Following the practical and subsequent discussion write up your case study city 
 * Cite the relevant policy and where appropriate literature.
 
 Should you struggle to find current approaches within your city explore other cities discussed within the practical. 
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
 
 ---
 
 https://link.springer.com/article/10.1007/s41207-016-0007-4
 
 https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/vol/108/suppl/C 
-<<<<<<< HEAD
-=======
 
 ---
->>>>>>> a3dd801ceaea2ab2a6b01b9965026e19a3953b87
