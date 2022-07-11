@@ -32,7 +32,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"af1a2e2770f9412aa6c693f4d87cb9d5","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x24fa111c63e48b493122081254462d1","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
     <script src="libs/editable/editable.js"></script>
@@ -70,7 +70,7 @@ class: inverse, center, title-slide, middle
 
 ### Lecture 4: Policy applications
 
-### 02/02/2022 (updated: 08/06/2022)
+### 02/02/2022 (updated: 11/07/2022)
 
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>[a.maclachlan@ucl.ac.uk](mailto:a.maclachlan@ucl.ac.uk)
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>[andymaclachlan](https://twitter.com/andymaclachlan)
@@ -232,17 +232,18 @@ Depends on a the combination of spectral bands,  resolutions + cost.
 # Different wavelengths show us different things...
 
 .pull-left[
-&lt;img src="img/spectral_table.PNG" width="100%" /&gt;
+&lt;img src="img/spectral_table.png" width="100%" /&gt;
 .small[Source:[USGS](https://www.usgs.gov/faqs/what-are-best-landsat-spectral-bands-use-my-research)
 ]]
 
 
 .pull-right[
-&lt;img src="img/spectral_viewer.PNG" width="100%" /&gt;
+&lt;img src="img/spectral_viewer.png" width="100%" /&gt;
 .small[Source:[USGS](https://landsat.usgs.gov/spectral-characteristics-viewer)
 ]]
 
 ---
+
 # Urban expansion 
 
 **Sensor**
@@ -368,7 +369,7 @@ Synthetic Aperture Radar:
   * See through weather and clouds 
   * Different wavelengths - different applications
   
-&lt;img src="img/SAR_bands.PNG" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/SAR_bands.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 .small[What is Synthetic Aperture Radar?. Source:[NASA Earth Data](https://earthdata.nasa.gov/learn/backgrounders/what-is-sar)
 ]
@@ -638,6 +639,37 @@ https://www.sciencedirect.com/science/article/abs/pii/S0924271616000265
 https://lgatto.github.io/IntroMachineLearningWithR/unsupervised-learning.html#k-means-clustering 
 
 ---
+
+# Droughts
+
+### Who is still watering their garden in a drought?
+
+.pull-left[
+* Southern California 2022 drought and water shortage - [cities of Conejo Valley](https://www.conejochamber.org/news/details/state-reduces-water-allocation-to-5-due-to-historically-dry-winter-and-low-reservoir-levels-03-21-2022) and Thousand Oaks
+
+* Various [rules about watering for residential properties](https://www.conejovalleyguide.com/welcome/emergency-water-conservation-measures-go-into-effect-on-june-1-2022-conejo-valley-water-providers)
+
+* Sentinel moisture index to spot who is watering too much?
+
+This is...
+
+.center[
+`\(NDMI = \frac{(B08 - B11)}{(B08 + B11)}\)`
+]
+
+* How can the cities prevent this...
+
+]
+
+.pull-right[
+
+&lt;img src="img/drought_index.jfif" width="100%" style="display: block; margin: auto;" /&gt;
+
+.small[See the Twitter thread for other examples. Source:[@ai6yrham](https://twitter.com/ai6yrham/status/1537146383475437568/photo/1)
+]
+]
+---
+
 # Forest fires
 
 * Dates back to the most cited paper on the topic 
