@@ -190,7 +190,7 @@ Depends on a the combination of spectral bands,  resolutions + cost.
 
 .pull-left[
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('img/spectral_table.PNG')
+knitr::include_graphics('img/spectral_table.png')
 ```
 .small[Source:[USGS](https://www.usgs.gov/faqs/what-are-best-landsat-spectral-bands-use-my-research)
 ]]
@@ -198,12 +198,13 @@ knitr::include_graphics('img/spectral_table.PNG')
 
 .pull-right[
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('img/spectral_viewer.PNG')
+knitr::include_graphics('img/spectral_viewer.png')
 ```
 .small[Source:[USGS](https://landsat.usgs.gov/spectral-characteristics-viewer)
 ]]
 
 ---
+
 # Urban expansion 
 
 **Sensor**
@@ -340,7 +341,7 @@ Synthetic Aperture Radar:
   * Different wavelengths - different applications
   
 ```{r echo=FALSE, out.width='50%', fig.align='center'}
-knitr::include_graphics('img/SAR_bands.PNG')
+knitr::include_graphics('img/SAR_bands.png')
 ```
 
 .small[What is Synthetic Aperture Radar?. Source:[NASA Earth Data](https://earthdata.nasa.gov/learn/backgrounders/what-is-sar)
@@ -629,6 +630,39 @@ https://www.sciencedirect.com/science/article/abs/pii/S0924271616000265
 https://lgatto.github.io/IntroMachineLearningWithR/unsupervised-learning.html#k-means-clustering 
 
 ---
+
+# Droughts
+
+### Who is still watering their garden in a drought?
+
+.pull-left[
+* Southern California 2022 drought and water shortage - [cities of Conejo Valley](https://www.conejochamber.org/news/details/state-reduces-water-allocation-to-5-due-to-historically-dry-winter-and-low-reservoir-levels-03-21-2022) and Thousand Oaks
+
+* Various [rules about watering for residential properties](https://www.conejovalleyguide.com/welcome/emergency-water-conservation-measures-go-into-effect-on-june-1-2022-conejo-valley-water-providers)
+
+* Sentinel moisture index to spot who is watering too much?
+
+This is...
+
+.center[
+$NDMI = \frac{(B08 - B11)}{(B08 + B11)}$
+]
+
+* How can the cities prevent this...
+
+]
+
+.pull-right[
+
+```{r echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics('img/drought_index.jfif')
+```
+
+.small[See the Twitter thread for other examples. Source:[@ai6yrham](https://twitter.com/ai6yrham/status/1537146383475437568/photo/1)
+]
+]
+---
+
 # Forest fires
 
 * Dates back to the most cited paper on the topic 
@@ -1025,3 +1059,5 @@ https://www.sciencedirect.com/journal/international-journal-of-applied-earth-obs
 Just from section 5, note table 1. https://www.mdpi.com/2220-9964/11/7/385
 
 ---
+
+

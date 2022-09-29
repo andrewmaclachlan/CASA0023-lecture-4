@@ -32,7 +32,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x58d7c3a4f664bff86e8500e26a6b145","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xdb84172f72e451b82b6ddf17860f261","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
     <script src="libs/editable/editable.js"></script>
@@ -237,17 +237,18 @@ Depends on a the combination of spectral bands,  resolutions + cost.
 # Different wavelengths show us different things...
 
 .pull-left[
-&lt;img src="img/spectral_table.PNG" width="100%" /&gt;
+&lt;img src="img/spectral_table.png" width="100%" /&gt;
 .small[Source:[USGS](https://www.usgs.gov/faqs/what-are-best-landsat-spectral-bands-use-my-research)
 ]]
 
 
 .pull-right[
-&lt;img src="img/spectral_viewer.PNG" width="100%" /&gt;
+&lt;img src="img/spectral_viewer.png" width="100%" /&gt;
 .small[Source:[USGS](https://landsat.usgs.gov/spectral-characteristics-viewer)
 ]]
 
 ---
+
 # Urban expansion 
 
 **Sensor**
@@ -373,7 +374,7 @@ Synthetic Aperture Radar:
   * See through weather and clouds 
   * Different wavelengths - different applications
   
-&lt;img src="img/SAR_bands.PNG" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/SAR_bands.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 .small[What is Synthetic Aperture Radar?. Source:[NASA Earth Data](https://earthdata.nasa.gov/learn/backgrounders/what-is-sar)
 ]
@@ -643,6 +644,37 @@ https://www.sciencedirect.com/science/article/abs/pii/S0924271616000265
 https://lgatto.github.io/IntroMachineLearningWithR/unsupervised-learning.html#k-means-clustering 
 
 ---
+
+# Droughts
+
+### Who is still watering their garden in a drought?
+
+.pull-left[
+* Southern California 2022 drought and water shortage - [cities of Conejo Valley](https://www.conejochamber.org/news/details/state-reduces-water-allocation-to-5-due-to-historically-dry-winter-and-low-reservoir-levels-03-21-2022) and Thousand Oaks
+
+* Various [rules about watering for residential properties](https://www.conejovalleyguide.com/welcome/emergency-water-conservation-measures-go-into-effect-on-june-1-2022-conejo-valley-water-providers)
+
+* Sentinel moisture index to spot who is watering too much?
+
+This is...
+
+.center[
+`\(NDMI = \frac{(B08 - B11)}{(B08 + B11)}\)`
+]
+
+* How can the cities prevent this...
+
+]
+
+.pull-right[
+
+&lt;img src="img/drought_index.jfif" width="100%" style="display: block; margin: auto;" /&gt;
+
+.small[See the Twitter thread for other examples. Source:[@ai6yrham](https://twitter.com/ai6yrham/status/1537146383475437568/photo/1)
+]
+]
+---
+
 # Forest fires
 
 * Dates back to the most cited paper on the topic 
@@ -1029,6 +1061,8 @@ https://www.sciencedirect.com/journal/international-journal-of-applied-earth-obs
 Just from section 5, note table 1. https://www.mdpi.com/2220-9964/11/7/385
 
 ---
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
