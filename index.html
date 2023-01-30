@@ -32,7 +32,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xdb84172f72e451b82b6ddf17860f261","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x0ec84778f534ed8b27cc7f792d88c78","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
     <script src="libs/editable/editable.js"></script>
@@ -75,7 +75,7 @@ background-position: center
 
 ### Lecture 4: Policy applications
 
-### 02/02/2022 (updated: 29/09/2022)
+### 02/02/2022 (updated: 30/01/2023)
 
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#562457;overflow:visible;position:relative;"><path d="M511.6 36.86l-64 415.1c-1.5 9.734-7.375 18.22-15.97 23.05c-4.844 2.719-10.27 4.097-15.68 4.097c-4.188 0-8.319-.8154-12.29-2.472l-122.6-51.1l-50.86 76.29C226.3 508.5 219.8 512 212.8 512C201.3 512 192 502.7 192 491.2v-96.18c0-7.115 2.372-14.03 6.742-19.64L416 96l-293.7 264.3L19.69 317.5C8.438 312.8 .8125 302.2 .0625 289.1s5.469-23.72 16.06-29.77l448-255.1c10.69-6.109 23.88-5.547 34 1.406S513.5 24.72 511.6 36.86z"/></svg>[a.maclachlan@ucl.ac.uk](mailto:a.maclachlan@ucl.ac.uk)
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#562457;overflow:visible;position:relative;"><path d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z"/></svg>[andymaclachlan](https://twitter.com/andymaclachlan)
@@ -129,14 +129,14 @@ background-position: center
 
 <div>
 <style type="text/css">.xaringan-extra-logo {
-width: 110px;
+width: 50px;
 height: 128px;
 z-index: 0;
 background-image: url(img/casa_logo.jpg);
 background-size: contain;
 background-repeat: no-repeat;
 position: absolute;
-top:1em;right:1em;
+top:1em;right:2em;
 }
 </style>
 <script>(function () {
@@ -270,11 +270,11 @@ Depends on a the combination of spectral bands,  resolutions + cost.
 
 LULC transformation on air pollution, increase MAP (Major Air Pollutants) and LST 
 
-* Used regression...
+* Used regression...LULC as independent (explanatory) and LST, pollution etc were dependent
 
 * Honeycombing - hex grids for different sensor data
 
-&lt;img src="img/LST_honeycombing.jpg" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/LST_honeycombing.jpg" width="40%" style="display: block; margin: auto;" /&gt;
 .small[Fig. 2. The classified honeycomb dataset for LST, PM₂.₅, SO₂, NO₂, CO, and O₃..Source:[Fuldalu and Alta, 2021](https://www.sciencedirect.com/science/article/pii/S2212095521001887?casa_token=0kyJ1dZmkm0AAAAA:syu0WnpPpsCKiY6PiBfzkf2epGa5uldthCpOt1Hey9_pmOF_uel1WpuYECTvF0jr3uzcRCrbd5k#f0005)
 ]
 
@@ -345,24 +345,9 @@ class: inverse, center, middle
 
 # Synthetic Aperture Radar (SAR)
 
----
+## Covered more in the last week....
 
-# SAR floods
-
-**Sensor**
-
-* Sentinel-1 SAR 
-
-ENSO phases but this is from Australian La Niña 2022
-  * trade winds from south america intensity
-  * draw up cool deep waters and increase thermocline 
-  * temp difference increases, walker circulation intensifies - feedback loop
-  * more cloud + more rain + cyclones in West Pacific 
-
-&lt;img src="img/SAR1.jpg" width="35%" style="display: block; margin: auto;" /&gt;
-
-.small[Eastern Australia Floods. Source:[brockmann-consult](https://www.brockmann-consult.de/eastern-australia-floods/)
-]
+## Some of the next few slides taken from the last week**
 
 ---
 
@@ -461,6 +446,150 @@ If the signal is from backscatter is not desired = "clutter"
 .small[Source:[Urban Area Delineation Using InSAR Products](https://webapps.itc.utwente.nl/librarywww/papers/msc_2002/gfm/luhega.pdf)
 ]
 
+
+---
+
+# SAR polarization
+
+.pull-left[
+
+  * Also different ploarizations:
+    * orientation of the plane in which EMR waves transmitted..
+    * "direction of travel of an electromagnetic wave vector’s tip: vertical (up and down), horizontal (left to right), or circular (rotating in a constant plane left or right)."
+    
+* Single = 1 horizontal (or vertical)  
+
+* Dual = transmits and receives both horizontal and vertical
+
+* HH = emitted in horizontal (H) and received in horizontal (H)
+    
+]
+
+.pull-right[
+
+&lt;img src="img/polarisation.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.small[Polarization. Source:[Wetland Monitoring and Mapping Using Synthetic Aperture Radar](https://www.intechopen.com/chapters/63701)
+]
+
+]
+ 
+---
+  
+# SAR polarization
+
+Different surfaces respond differently to the polarizations
+
+* Rough scattering (e.g. bare earth) = most sensitive to VV
+* Volume scattering (e.g. leaves) = cross, VH or HV
+* Double bounce (e.g. trees / buildings) = most sensitive to HH.
+
+&lt;img src="img/SARPolarization.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+.small[What is Synthetic Aperture Radar?. Source:[NASA Earth Data](https://earthdata.nasa.gov/learn/backgrounders/what-is-sar)
+]
+
+
+---
+
+# SAR background 
+
+.pull-left[
+
+* Wavelength of SAR can change application 
+
+&lt;img src="img/SAR_bands_NASA.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+
+* Remember this is on the electromagnetic spectrum (EMR)
+
+&lt;img src="img/SAR_bands_EMR.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+]
+.small[What is Synthetic Aperture Radar?. Source:[NASA Earth Data](https://earthdata.nasa.gov/learn/backgrounders/what-is-sar)
+]
+
+---
+
+# Amplitude (backscatter) and phase
+
+
+.pull-left[
+A SAR signal has both **amplitude** (backscatter) and **phase** data
+
+** Backscatter (amplitude)**
+
+* Polarization
+
+  * VV = surface roughness
+  * VH = volume of surface (e.g. vegetation has a complex volume and can change the polarization)
+
+* Permativity (dielectric constant) - how **reflective** is the property which means **reflective back to the sensor**. Water usually reflects it off elsewhere
+
+* The return **value**, also remember the band (wavelength)
+]
+
+.pull-right[
+
+&lt;img src="img/amplitude_example.png" width="100%" style="display: block; margin: auto;" /&gt;
+* Wind makes the water move and reflect back to the sensor (under VV)
+
+.small[NASA Data Made Easy: Part 2- Introduction to SAR. Source:[NASA Earth Data](https://www.youtube.com/watch?v=Zfn7P395O40)
+]
+]
+
+---
+
+# Amplitude (backscatter) and phase
+
+.pull-left[
+A SAR signal has both **amplitude** (backscatter) and **phase** data
+  
+**Phase**
+
+  * Location of wave on the cycle when it comes back to the sensor
+
+]
+
+.pull-right[
+
+&lt;img src="img/phas_shift.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.small[InSAR. Source:[Pascal Castellazzi](https://www.researchgate.net/figure/Principle-of-the-InSAR-techniques-the-phase-difference-observed-by-comparing-two-SAR_fig1_342916517)
+]
+]
+
+
+
+---
+
+# SAR floods
+
+**Sensor**
+
+* Sentinel-1 SAR 
+
+ENSO phases but this is from Australian La Niña 2022
+  * trade winds from south america intensity
+  * draw up cool deep waters and increase thermocline 
+  * temp difference increases, walker circulation intensifies - feedback loop
+  * more cloud + more rain + cyclones in West Pacific 
+
+&lt;img src="img/SAR1.jpg" width="35%" style="display: block; margin: auto;" /&gt;
+
+.small[Eastern Australia Floods. Source:[brockmann-consult](https://www.brockmann-consult.de/eastern-australia-floods/)
+]
+
+---
+# ENSO
+
+**El Niño–Southern Oscillation (ENSO)**
+
+.center[
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/WPA-KpldDVc?start=111" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
+]
 ---
 
 # Me on SAR
@@ -482,7 +611,6 @@ class: inverse, center, middle
 
 Interferometry Synthetic Aperture Radar (InSAR)
  * Take two RADAR observations of the target (e.g. the ground)
- * The two 
  * Use the phase difference 
  * Phase = 
   &gt; "total number of cycles of the wave at any given distance from the transmitter, including the fractional part"
@@ -507,8 +635,10 @@ Key terms
 * Coherence Map
 
   &gt;  Coherence is defined as the degree of similarity of backscattering response (or reflection characteristic of as measured by the SAR sensor) between corresponding ground cells in both SAR image of an InSAR pair. 
+  
+  &gt; Something is coherent when they are in phase (vibrate in unison)
 
-* Differential Interferometry Synthetic Aperture Radar (DInSAR)
+* Differential Interferometry Synthetic Aperture Radar (DInSAR) - more on this later
   
 &gt; "quantification of the ground displacement that occurred between the two acquisitions can be achieved" through a "differential interferogram"
 
@@ -516,24 +646,15 @@ Key terms
 ]
 
 ---
-# InSAR 3
-
-
-&lt;img src="img/interf_fig4.gif" width="100%" style="display: block; margin: auto;" /&gt;
-
-.small[INTERFEROMETRY EXPLAINED - MORE DETAIL. Source:[NASA SRTM](https://www2.jpl.nasa.gov/srtm/instrumentinterfmore.html)
-]
-
----
 # SAR applications
 
 SAR applications, an emerging trend: https://www.mdpi.com/journal/remotesensing/special_issues/Urban_SAR 
 
-* Damage detection: https://www.sciencedirect.com/science/article/pii/S0924271621000010?casa_token=Peuv4YfQjsEAAAAA:wAdc-R2tEjK7L4maY6ZcOio3YyIZPnb7HgqXi5SQZAeIoYq8bApu9iA6H-281attgj1dwQ-IPz8 
+* [Damage detection](https://www.sciencedirect.com/science/article/pii/S0924271621000010?casa_token=Peuv4YfQjsEAAAAA:wAdc-R2tEjK7L4maY6ZcOio3YyIZPnb7HgqXi5SQZAeIoYq8bApu9iA6H-281attgj1dwQ-IPz8)
 
-* Urban area mapping: https://www.sciencedirect.com/science/article/pii/S0034425721002352?casa_token=6kKdHHJ_GZ4AAAAA:LDl85LIgl6O8G_NNSgxfBgcGw7vpRrS0JAd5STW5obGnGDuO2l0RmkdzzLqLEbqNbO0MSzdhFPU
+* [Urban area mapping](https://www.sciencedirect.com/science/article/pii/S0034425721002352?casa_token=6kKdHHJ_GZ4AAAAA:LDl85LIgl6O8G_NNSgxfBgcGw7vpRrS0JAd5STW5obGnGDuO2l0RmkdzzLqLEbqNbO0MSzdhFPU)
 
-* Urban flooding (lower backscatter coefficient): https://www.mdpi.com/2071-1050/12/14/5784 
+* [Urban flooding (lower backscatter coefficient)](https://www.mdpi.com/2071-1050/12/14/5784)
 
 * Landslides
 
@@ -741,36 +862,131 @@ class: inverse, center, middle
 
 ---
 
-class: inverse, center, middle
+# Combining this into a model...
 
-# The key is *usually* **combining the remote sensing data** with GIS or other datasets to answer questions
+**[Modeling the relationships between historical redlining, urban heat, and heat-related emergency department visits: An examination of 11 Texas cities**, Li et al. 2022](https://journals.sagepub.com/doi/10.1177/23998083211039854)
+
+Data:
+
+* Red lined districts .shp (more on this in future lecture)
+* Social vulnerability factors from American community survey: population aged 65 and older, non-White population, Hispanic population, lower-income population, individuals living alone, and populations who do not speak English well.
+  * Normalised by population
+* Visit to emergency departments for heat related illness
+* LST data from the ECO2LSTE product within the 1 June and 31 August 2018–2020 window
+  * **One daytime and one nighttime imagery set** with best quality flags were selected for each city (Figure 2), and summary measures such as mean daytime/nighttime LST, minimum daytime/nighttime LST, and maximum daytime/nighttime LST were determined with reference to ZCTA boundaries
+
+
+---
+class: center, middle
+
+## Not clear what a set is ?
+
+## A single image?
+
+---
+
+
+# Combining this into a model...2
+
+Methods:
+
+* spatial autoregressive model (SAR) instead - Lag and error model
+  * this means spatial regression!
+  * recall from [CASA0005](https://andrewmaclachlan.github.io/CASA0005repo/explaining-spatial-patterns.html)
+      * lag = include values of near by polygons
+      * error = residuals of values in near polygons
+
+Modelling:
+
+* LST
+* heat-related ED visits
+
+Output:
+
+* "these results suggest that inequalities in urban heat island conditions exist not only between the historically defined redlined and non-redlined zones but also between contemporary geographic units that contain more versus fewer historically redlined areas."
+
+---
+class: center, middle
+
+## Refresher...
+
+## In what circumstance might we use a spatial regression model?
 
 --
 
-# The remotely sensed data is consistent over days, months and years
+## Where are residuals (errors) in linear regression are spatially autocorrelated (e.g. from Moran's I telling us how similar nearby objects our based on a weight matrix)
+
+---
+
+# The key
+.pull-left[
+
+* The key is *usually* **combining the remote sensing data** with GIS or other datasets to answer questions
+
+* The remotely sensed data is consistent over days, months and years
+
+* Often papers don't:
+  * Link to population / people
+  * Say how we can inform policy...
+
+]
+
+.pull-right[
+**For example**
+* Where should initiatives be targeted for reducing air pollution
+* What areas / population are most at risk from forest fires or where should remediation be targeted 
+* How can illegal monitoring be most effectively stopped
+
+]
+---
+
+# The key in detail..
+
+&gt; Our findings suggest that these challenges are distributed unevenly, and that historically redlined neighborhoods bear a disproportionately heavy burden. Existing heat-hazard prevention and mitigation plans are mostly based on entire region or city-level conditions, while few policies and initiatives pay attention to the inequalities rooted in long-standing spatial patterns of disinvestment and segregation in cities. Understanding how disparities in heat-related health conditions may have emerged through historical housing segregation can focus attention and resources on redressing these structural inequalities
+
+Questions / critical reflection: 
+
+* If i am a city planner how can we start to address this
+* What areas should i start with (funding often limited)
+* What stage in the planning process might this come
+* Who would be responsible (e.g. what department)
+* What skills do they need
+* What benefits can this bring to the city (often finances!)
+* How does this help the city align with global agendas
+* What stakeholders do i need to consider
+
+---
+
+# The key in detail..
+
+Often these considerations and questions are easily achievable from the data we have...
+
+For example...
+
+* The regression models will have produced Coefficient estimates 
+
+  * They represent a one unit change in the independent represents a drop or rise in dependent (note this study didn't show this)
+  * In spatial regression we can also compute direct and indirect effects due to the lag
+  * We will have the spatial data for these variables....that we can map ...
+
+* We also have the Coefficient t-value:
+
+  * greater the relative effect that particular independent variable is having on the dependent variable 
+  
+---
+# Example of integrating analysis...
+
+
+&lt;img src="img/fbuil-06-519599-g005.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+
+.small[Source:[MacLachlan et al. 2021](https://www.frontiersin.org/articles/10.3389/fbuil.2020.519599/full)]
 
 ---
 class: inverse, center, middle
 
+## We will explore methods in the next few weeks
 
-# Often these papers don't: 
-## demonstrate the link to population / people
-## show how policy can be informed by the outcomes
-
----
-
-class: inverse, center, middle
-
-# For example:
-## Where should iniatives be targetd for reducing air pollution
-## What areas / population are most at risk from forest fires or where should remeidation be targeted 
-## How can illegal monitoring be most effectively stopped
----
-class: inverse, center, middle
-
-# We will explore methods in the next few weeks
-
-# But first we will explore policy to understand where remote sensing data can be applied.
+## But first we will explore policy to understand where remote sensing data can be applied.
 
 ---
 # Global policy documents
@@ -1024,43 +1240,8 @@ Lower tier government then carries out or adheres to these goals, for example...
 ]
 ---
 
-# Task 1
+# Summary
 
-For the individual assignment of the module you are required to produce a online portfolio of independent study and response questions. 
-
-For the practical session this week **come** prepared **to talk** about the following:
-
-- Search for one metropolitan policy challenge (any city in the World) that could be solved by incorporating remotely sensed data
-
-- Identify and evaluate a remotely sensed data set that could used to assist with contributing to the policy goal
-
--  Demonstrate how this links to global agendas / goals
-
-- Explain how it advances current local, national or global approaches.
-
-Cities will have a diverse range of documentation available...
-
----
-# Task 2
-
-Following the practical and subsequent discussion write up your case study city in three paragraphs, you should:
-
-* Detail the relevant policy that can be assisted with remotely sensed data
-* Evaluate how remotely sensed data set(s) could used to assist with contributing to the policy goal
-* Place it within local / global agendas and current approaches
-* Cite the relevant policy and where appropriate literature.
-
-Should you struggle to find current approaches within your city explore other cities discussed within the practical. 
-
----
-
-https://link.springer.com/article/10.1007/s41207-016-0007-4
-
-https://www.sciencedirect.com/journal/international-journal-of-applied-earth-observation-and-geoinformation/vol/108/suppl/C 
-
-Just from section 5, note table 1. https://www.mdpi.com/2220-9964/11/7/385
-
----
 
 
     </textarea>
