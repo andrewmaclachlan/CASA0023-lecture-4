@@ -336,6 +336,17 @@ knitr::include_graphics('img/SAR_bands.png')
 ]
   
 ---
+# Comparisons 
+
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics('img/ecolocation_types.jpg')
+```
+
+.small[Sound waves and sound reflection is used by bats and dolphins to echolocate; this process was studied and used to improve underwater sonar that we use in submarines and other water vessels. Source:[askabiologistasu](https://askabiologist.asu.edu/echolocation#:~:text=Like%20bat%20echolocation%2C%20radar%20is,submarines%20and%20other%20water%20vessels.)
+]
+
+* [Ripple tank simulator](http://www.falstad.com/ripple/)  
+---
 
 # SAR background 2
 
@@ -352,8 +363,6 @@ knitr::include_graphics('img/SARPolarization.jpg')
 
 ---
 
----
-
 # SAR polarization
 
 .pull-left[
@@ -367,7 +376,7 @@ knitr::include_graphics('img/SARPolarization.jpg')
 * Dual = transmits and receives both horizontal and vertical
 
 * HH = emitted in horizontal (H) and received in horizontal (H)
-    
+
 ]
 
 .pull-right[
@@ -378,6 +387,9 @@ knitr::include_graphics('img/polarisation.png')
 
 .small[Polarization. Source:[Wetland Monitoring and Mapping Using Synthetic Aperture Radar](https://www.intechopen.com/chapters/63701)
 ]
+
+* Can change when interacting with materials
+
 
 ]
  
@@ -662,6 +674,9 @@ SAR applications, an emerging trend: https://www.mdpi.com/journal/remotesensing/
 
 # Monitoring forests + illegal logging 
 
+[Hansen, M.C., Potapov, P.V., Moore, R., Hancher, M., Turubanova, S.A., Tyukavina, A., Thau, D., Stehman, S.V., Goetz, S.J., Loveland, T.R., Kommareddy, A., Egorov, A., Chini, L., Justice, C.O., Townshend, J.R.G., 2013. High-Resolution Global Maps of 21st-Century Forest Cover Change. Science 342, 850–853.]( https://doi.org/10.1126/science.1244693)
+
+
 **Sensor**
 
 * Landsat (2000 to 2012)
@@ -736,7 +751,7 @@ knitr::include_graphics('img/training_data.png')
 
 * Classification (supervised or unsupervised)
 
-> Decision trees are hierarchical classifiers that predict class membership by recursively partitioning a data set into more homogeneous or less varying subsets, referred to as nodes
+> Decision trees are hierarchical classifiers (top down) that predict class membership by recursively partitioning (splitting) a data set into more homogeneous or less varying subsets, referred to as nodes
 
 ```{r echo=FALSE, out.width='50%', fig.align='center'}
 knitr::include_graphics('img/Hansen_forest_change.jpeg')
@@ -763,6 +778,102 @@ Used in Brazil to [target illegal logging]( https://news.mongabay.com/2019/04/ho
 * Split the data into more and more homogeneous subsets (filtering!) this can be limited through
   * pre-pruning - set a number of iterations before
   * post-pruning - reduce groups afterwards based on accuracy. Tree fully grows but will be overfit.
+
+---
+# Decision trees..briefly 
+
+.pull-left[
+
+```{r echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics('img/decision_tree.png')
+```
+
+.small[Decision tree. Source:[towardsai](https://towardsai.net/p/programming/decision-trees-explained-with-a-practical-example-fe47872d3b53)]
+
+]
+
+.pull-right[
+
+```{r echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics('img/DT_terms.png')
+```
+
+.small[Decision tree. Source:[towardsai](https://towardsai.net/p/programming/decision-trees-explained-with-a-practical-example-fe47872d3b53)]
+
+
+```{r echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics('img/DT_process.png')
+```
+
+.small[Decision tree. Source:[towardsai](https://towardsai.net/p/programming/decision-trees-explained-with-a-practical-example-fe47872d3b53)]
+
+
+]
+---
+# Decision trees..briefly 2
+
+.pull-left[
+
+**Post pruning**
+
+In post-pruning first, it goes deeper and deeper in the tree to build a complete tree. If the tree shows the overfitting problem then pruning is done as a post-pruning step. We use a cross-validation data to check the effect of our pruning. **Using cross-validation data, it tests whether expanding a node will make an improvement or not**. If it shows an improvement, then we can continue by expanding that node. But if it shows a reduction in accuracy then it should not be expanded i.e, the node should be converted to a leaf node.
+
+
+
+]
+                   
+.pull-right[
+**tidymodels**
+
+In R we have the new parsnip package... it let's us change models without changing the data / packages...
+
+**Type** = random forest, decision trees etc
+**mode** = classification or regression
+**engine** Specific package or model fit...
+
+]
+
+
+---
+# Decision trees..briefly 3
+
+* Prepare the model and testing / training
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
+  library(tidymodels)
+  tidymodels_prefer()
+  data(Chicago)
+  
+  n <- nrow(Chicago)
+  Chicago <- Chicago %>% select(ridership, Clark_Lake, Quincy_Wells)
+  
+  Chicago_train <- Chicago[1:(n - 7), ]
+  Chicago_test <- Chicago[(n - 6):n, ]
+
+  dt_reg_spec <- 
+    decision_tree(tree_depth = 30) %>% 
+    # This model can be used for classification or regression, so set mode
+    set_mode("regression") %>% 
+    set_engine("rpart")
+  dt_reg_spec
+```
+
+
+---
+
+# Decision trees..briefly 4
+
+* Fit the train data to the tree
+
+* Test it with the testing data
+
+```{r, message=FALSE, results='hide'}
+ set.seed(1)
+  dt_reg_fit <- dt_reg_spec %>% fit(ridership ~ ., data = Chicago_train)
+  dt_reg_fit
+  
+predict(dt_reg_fit, Chicago_test)  
+```
 
 ---
 
@@ -1265,8 +1376,6 @@ Lower tier government then carries out or adheres to these goals, for example...
 * Cities set policies but often focus on legislation or monitoring as opposed to prevention....
 
 * How can we achieve their goals and improve urban areas more effectively in a data informed manner ?
-
-
 
 
 
