@@ -1007,7 +1007,8 @@ class: center, middle
 
 Methods:
 
-* spatial autoregressive model (SAR) instead - Lag and error model
+* spatial autoregressive model (SAR) instead
+  * this means models that contain geogrpahic areas like... Lag and error model
   * this means spatial regression!
   * recall from [CASA0005](https://andrewmaclachlan.github.io/CASA0005repo/explaining-spatial-patterns.html)
       * lag = include values of near by polygons
@@ -1059,7 +1060,7 @@ class: center, middle
 
 # The key in detail..
 
-> Our findings suggest that these challenges are distributed unevenly, and that historically redlined neighborhoods bear a disproportionately heavy burden. Existing heat-hazard prevention and mitigation plans are mostly based on entire region or city-level conditions, while few policies and initiatives pay attention to the inequalities rooted in long-standing spatial patterns of disinvestment and segregation in cities. Understanding how disparities in heat-related health conditions may have emerged through historical housing segregation can focus attention and resources on redressing these structural inequalities
+> Our findings suggest that these challenges are distributed unevenly, and that historically redlined neighborhoods bear a disproportionately heavy burden. Existing heat-hazard prevention and mitigation plans are mostly based on entire region or city-level conditions, **while few policies and initiatives pay attention to the inequalities rooted in long-standing spatial patterns of disinvestment and segregation in cities**. Understanding how disparities in heat-related health conditions may have emerged through historical housing segregation can focus attention and resources on redressing these structural inequalities
 
 Questions / critical reflection: 
 
@@ -1082,7 +1083,7 @@ For example...
 
 * The regression models will have produced Coefficient estimates 
 
-  * They represent a one unit change in the independent represents a drop or rise in dependent (note this study didn't show this)
+  * They represent a one unit change in the independent ($x$) represents a drop or rise in dependent ($y$) - note this study didn't show this.
   * In spatial regression we can also compute direct and indirect effects due to the lag
   * We will have the spatial data for these variables....that we can map ...
 
@@ -1267,7 +1268,7 @@ knitr::include_graphics('img/NYC.png')
 .panel[.panel-name[OneNYC 2050 2]
 
 
-* Discusses coastal resiliency as an example of rising sea levels and flooding...BUT?
+* Discusses coastal resiliency as an example of rising sea levels and flooding...BUT?..how do they do it?
 
 .pull-left[
 ```{r echo=FALSE, out.width='70%', fig.align='center'}
@@ -1293,7 +1294,9 @@ knitr::include_graphics('img/floods2.png')
 
 * "Careful management of development to avoid developing in high flood risk areas"
 
-States policies and their requirements ...BUT...
+States policies and their requirements ...BUT...HOW....
+
+* Ollie and I wrote a [paper on Cape Town's response to COVID that demonstrates the challenges within government.](https://www.mdpi.com/2071-1050/15/3/1853) 
 
 
 ]
@@ -1324,7 +1327,7 @@ Recommendations for Ahmedabad’s Government Officials](https://www.nrdc.org/sit
 
 In most of the previous examples the documents were created by the metropolitan government:
   * Greater London Authority 
-  * Amdavad Municipal Corporation
+  * Ahmedabad Municipal Corporation
   * City of New York
 
 Usually these are considered an upper tier
