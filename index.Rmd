@@ -235,7 +235,7 @@ LULC transformation on air pollution, increase MAP (Major Air Pollutants) and LS
 
 * Used regression...LULC as independent (explanatory) and LST, pollution etc were dependent
 
-* Honeycombing - hex grids for different sensor data
+* Honeycombing - hex grids for different sensor data, values interpolated to same resolution
 
 ```{r echo=FALSE, out.width='40%', fig.align='center'}
 knitr::include_graphics('img/LST_honeycombing.jpg')
