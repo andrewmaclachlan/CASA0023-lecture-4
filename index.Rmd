@@ -467,7 +467,7 @@ knitr::include_graphics('img/SARtree_figure2.jpg')
 
 Some terms:   
 
-> Backscatter is the portion of the outgoing radar signal that the target redirects directly back towards the radar antenna
+> Backscatter is the portion of the outgoing radar signal that the target redirects directly back towards the radar antenna (also called amplitude)
 
 The higher the backscattered intensity = rougher the surface. It is "unitless"
 
@@ -577,7 +577,7 @@ A SAR signal has both **amplitude** (backscatter) and **phase** data
 
 * Sentinel-1 SAR 
 
-ENSO phases but this is from Australian La Niña 2022
+ENSO (El Niño-Southern Oscillation) phases but this is from Australian La Niña 2022
   * trade winds from south america intensity
   * draw up cool deep waters and increase thermocline 
   * temp difference increases, walker circulation intensifies - feedback loop
